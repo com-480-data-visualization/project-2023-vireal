@@ -9,7 +9,7 @@
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
 ## Milestone 1 (7th April, 5pm)
-readme update
+
 ![](https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/imgs/ai_generated_logo.png)
 
 **10% of the final grade**
