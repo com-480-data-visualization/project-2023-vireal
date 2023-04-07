@@ -43,7 +43,7 @@ Our work will revolve around the two most common coffee grades, namely Arabica a
 
 Besides the study of these two varieties, we will produce a visualization of the coffee consumption accross countries, the principal coffee producers and the historical price of coffee along the years.
 
-Regarding the target audience of our work, coffee is present in the life of people from different backgrounds and social status. This project is thus, for a major part, a source of inspiration for coffee lovers to understand what better characterizes this little grain that changes their lives. This work may also be a source of inspiration for coffee producers, retailers and researchers to have an overall view of the distribution of features related to their economy or research, like where coffee producers are concentrated and where it would be easy to find clients.
+Regarding the target audience of our work, coffee is present in the life of people from different backgrounds and social status. This project is thus, for a major part, a source of inspiration for coffee lovers to understand better what characterizes this small little grain that changes their lives. As well as coffee producers, retailers and researchers to have an overall view of the distribution of features related to their economy or research like where coffee producers are concentrated and where it would be easy to find clients.
 
 
 ### Exploratory Data Analysis
