@@ -3,43 +3,41 @@
 | Student's name | SCIPER |
 | -------------- | ------ |
 | Victor Nazianzeno--Le Jamtel|312075 |
-| | |
-| | |
+| Javier García Arredondo|311166 |
+| Hind El Bouchrifi| 300862 |
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
 ## Milestone 1 (7th April, 5pm)
-
+readme update
 ![](https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/imgs/ai_generated_logo.png)
 
 **10% of the final grade**
 
-This is a preliminary milestone to let you set up goals for your final project and assess the feasibility of your ideas.
-Please, fill the following sections about your project.
-
-*(max. 2000 characters per section)*
-
 ### Dataset
 
-We will be working with different datasets about coffee. The main dataset is from https://github.com/jldbc/coffee-quality-databasecontain and contains reviews of 1312 arabica and 28 robusta coffee beans from the Coffee Quality Institute's trained reviewers in January 2018. It contains features about the coffee quality, the beans characteristics and information about the production farms. The dataset already includes a cleaned version of the raw data, which anticipates the data preprocessing phase. 
+We will be working with various datasets related to coffee. The main dataset we will be utilizing is available at https://github.com/jldbc/coffee-quality-database. This dataset consists of reviews for 1312 arabica and 28 robusta coffee beans from the Coffee Quality Institute's trained reviewers in January 2018. The dataset includes features about the quality of the coffee, the characteristics of the beans, and information about the production farms. It is an extensive and comprehensive dataset that is supported by a reputable institution in the coffee production and quality assessment field. Additionally, the dataset already includes a cleaned version of the raw data, which eliminates the need for supplementary the data preprocessing. 
 
-To complement this dataset we will integrate the following smaller ones that treat the topic from another angle:
+To complement this dataset, we will integrate four smaller datasets that approach the topic from a different perspective:
 - **coffee_prices_historical**: 
-The dataset contains records about coffee prices from 1973 to 2022
-- **coffee_consumption_by_county**:
-The dataset contains records about the worldwide consumption level of coffee in 2019
+[Link to the source.](https://www.kaggle.com/datasets/williamriveraramos/coffee-prices-historical)
+This dataset contains records about daily standard coffee prices from 1973 to 2022.
+- **coffee_consumption_by_country**:
+[Link to the source.](https://www.kaggle.com/datasets/nurielreuven/coffee-consumption-by-country-2022)
+This dataset provides information on the consumption levels of coffee in different countries for the year 2019.
 - **coffee_growing_countries**:
-It contains description about the main coffee growing countries
-- **coffee_producer_countries**: TODO Javier
-It contains.
+[Link to the source.](https://www.kaggle.com/datasets/albyati/coffee-growing-countries)
+This dataset includes descriptions of the primary coffee growing countries.
+- **coffee_producer_countries**:
+[Link to the source.](https://www.kaggle.com/datasets/yamaerenay/ico-coffee-dataset-worldwide)
+This dataset offers details on the production, imports and exports of coffee by country from 1990 to 2018. It is supported by the Internation Coffee Organization.
 
-These datasets contain very simple data types mainly `integers` and thus don't require heavy pre-processing.
+These four datasets contain concise data and simple data types, mainly `integers`. Therefore, they do not require extensive pre-processing, mainly just fitting the data together, such as aligning them to the same time frame.
 
-TODO add datasets sizes ?
 
 ### Problematic
 
-Coffee is one of the most popular and widely consumed beverages in the world. Apart from its presesence in multiple gastronomic environments, it also symbolises a social phenomenom. Coffee accompanies the mornings of many people everyday and creates a good context of inspiration for countless individuals.
+Coffee is one of the most popular and widely consumed beverages in the world. Apart from its presence in gastronomy, it also symbolises a social phenomenom. Coffee accompanies the mornings of many people everyday and creates a good context of inspiration for countless individuals.
 
 As daily coffee consumers, it is relevant for us to learn about the different varieties of coffee, and how the production and consumption patterns change due to different factors. Exploring the geographical, cultural, commercial and culinar aspects of coffee can be fascinating to understand and analyse.
 
@@ -58,10 +56,10 @@ The coffee-quality-database contains many different parameters describing the ta
 
 ![](https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/imgs/taste_profile_heatmap.png)
 
+Having an idea of the correlation between different characteristics of the taste profile will allow us to construct very insighful visuals when doing the comparative study of Robusta and Arabica.
 
-> Pre-processing of the data set you chose
-> - Show some basic statistics and get insights about the data
 ##### Coffee prices insights:
+Some basic statistics about the worldwide coffee prices in pounds in 2018
 | Statistic | value (£) |
 | -------------- | ------ |
 | count | 12147.000000 |
@@ -72,6 +70,17 @@ The coffee-quality-database contains many different parameters describing the ta
 | 50% | 1.237000 |
 | 75% | 1.470000 |
 | max | 3.356300 |
+
+##### Coffee consumption insights:
+Here is a barplot that show the distribution of coffee consumption per country in kg in 2019
+
+![](https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/imgs/cons.png)
+
+
+##### Coffee production insights:
+Here is a barplot that show the total production by all exporting countries (In thousand 60 kg bags) in 2018
+
+![](https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/imgs/production.png)
 
 ### Related work
 
