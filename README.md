@@ -84,25 +84,14 @@ Here is a barplot that show the total production by all exporting countries (In 
 
 ### Related work
 
-The originality of our project comes mainly from comparing the two famous coffee varieties: "Arabica" and "Robusta", as well as a worldwide overview of the distribution related to coffee production and comsumption in a more interactive manner.
+The originality of our project lies primarily in the comparison of the two famous coffee varieties, "arabica" and "robusta", as well as a worldwide overview of the distribution of coffee production and consumption in a more interactive manner.
 
-While there are many available resources online analyzing different coffee roasts, they usually don't focus on the visual aspect of their study. 
-Taking a visual approach can provide a more intuitive and holistic comparison of the two types of coffee beans.
-In comparison, we can cite the work of
-[https://rpubs.com/Aashu26698/coffee-review-viz](Aashutosh Sehgal and al.)
+While there are numerous resources available online analyzing different coffee roasts, they usually don't emphasize the visual aspect of their study. 
+A visual approach can offer a more intuitive and holistic comparison of the two types of coffee beans. In comparison, we can cite the work of [Aashutosh Sehgal and al.](https://rpubs.com/Aashu26698/coffee-review-viz)
 
-For instance, we have consulted an extensive work about coffee data along three Medium articles. The contributions mainly reside in the data analysis field, and plots are dense and technical. We . The first (https://towardsdatascience.com/a-review-of-coffee-data-grades-and-flavors-5ccb6fc51941) corresponds to coffee grade and flavor. It focuses on cupping scores (also known as Q-scores or grades). 
+Additionally, we have consulted an extensive work about coffee data from three Medium articles. The contributions mainly reside in the data analysis field, and plots are dense and technical. The [first article](https://towardsdatascience.com/a-review-of-coffee-data-grades-and-flavors-5ccb6fc51941) deals with coffee grades and flavors. It focuses on cupping scores (also known as Q-scores or grades). The [second](https://towardsdatascience.com/comparing-coffee-using-pattern-recognition-35b92cca4502) compares coffee using pattern recognition and the [third](https://towardsdatascience.com/specialty-coffee-comparing-grading-methods-36777cae220f) evaluates different grading methods.
 
- Cupping Scores (
- correlation
- PCA
- 
-
-
-where 
- 
-
-
+With respect to data visualization, we found inspiration from a variety of sources, such as the New York Times interactive visualizations from [How the Recession Reshaped the Economy, in 255 Charts](https://www.nytimes.com/interactive/2014/06/05/upshot/how-the-recession-reshaped-the-economy-in-255-charts.html?mtrref=undefined&gwh=5F0F3A546EAF81E62FAAB4C396594B63&gwt=pay&assetType=PAYWALL) and [2014 “the year in interactive storytelling”](https://www.nytimes.com/interactive/2014/12/29/us/year-in-interactive-storytelling.html?_r=0&mtrref=undefined&gwh=80657AC26C34BEF1AE164D0F76F73C90&gwt=pay&assetType=PAYWALL). Besides, we have extensively consulted the website "FlowingData", mainly the article [One Dataset, Visualized 25 Ways](https://flowingdata.com/2017/01/24/one-dataset-visualized-25-ways/) and the [guides for chart types](https://flowingdata.com/chart-types/).
 
 ## Milestone 2 (7th May, 5pm)
 
