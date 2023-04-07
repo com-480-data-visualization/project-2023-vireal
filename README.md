@@ -8,11 +8,9 @@
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
-## Milestone 1 (7th April, 5pm)
+## Milestone 1
 
 ![](https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/imgs/ai_generated_logo.png)
-
-**10% of the final grade**
 
 ### Dataset
 
@@ -76,11 +74,14 @@ Here is a barplot that show the distribution of coffee consumption per country i
 
 ![](https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/imgs/cons.png)
 
+As we can see, USA, Germany, France, Japan and Italy are the biggest coffee consumers in the world. Which is not surprising since coffee is an important part of their culture and economy.
 
 ##### Coffee production insights:
 Here is a barplot that show the total production by all exporting countries (In thousand 60 kg bags) in 2018
 
 ![](https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/imgs/production.png)
+
+From the plot we can notice that coffee production is mostly concentrated in Brazil, Vietnam, Columbia, Indonesia and Ethiopia. This is mainly due to the advantageous climate and land availabiities as well as rich tradition and expertise.
 
 ### Related work
 
@@ -92,19 +93,10 @@ A visual approach can offer a more intuitive and holistic comparison of the two 
 Additionally, we have consulted an extensive work about coffee data from three Medium articles. The contributions mainly reside in the data analysis field, and plots are dense and technical. The [first article](https://towardsdatascience.com/a-review-of-coffee-data-grades-and-flavors-5ccb6fc51941) deals with coffee grades and flavors. It focuses on cupping scores (also known as Q-scores or grades). The [second](https://towardsdatascience.com/comparing-coffee-using-pattern-recognition-35b92cca4502) compares coffee using pattern recognition and the [third](https://towardsdatascience.com/specialty-coffee-comparing-grading-methods-36777cae220f) evaluates different grading methods.
 
 With respect to data visualization, we found inspiration from a variety of sources, such as the New York Times interactive visualizations from [How the Recession Reshaped the Economy, in 255 Charts](https://www.nytimes.com/interactive/2014/06/05/upshot/how-the-recession-reshaped-the-economy-in-255-charts.html?mtrref=undefined&gwh=5F0F3A546EAF81E62FAAB4C396594B63&gwt=pay&assetType=PAYWALL) and [2014 “the year in interactive storytelling”](https://www.nytimes.com/interactive/2014/12/29/us/year-in-interactive-storytelling.html?_r=0&mtrref=undefined&gwh=80657AC26C34BEF1AE164D0F76F73C90&gwt=pay&assetType=PAYWALL). Besides, we have extensively consulted the website "FlowingData", mainly the article [One Dataset, Visualized 25 Ways](https://flowingdata.com/2017/01/24/one-dataset-visualized-25-ways/) and the [guides for chart types](https://flowingdata.com/chart-types/).
+ 
 
-## Milestone 2 (7th May, 5pm)
+## Milestone 2
 
-**10% of the final grade**
+## Milestone 3
 
-
-## Milestone 3 (4th June, 5pm)
-
-**80% of the final grade**
-
-
-## Late policy
-
-- < 24h: 80% of the grade for the milestone
-- < 48h: 70% of the grade for the milestone
 
