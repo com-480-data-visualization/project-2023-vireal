@@ -3,7 +3,7 @@
 ## Website
 
 <p align="center">
-     <a href=https://com-480-data-visualization.github.io/project-2023-vireal/website/index.html>Website</a>
+     <a href="https://com-480-data-visualization.github.io/project-2023-vireal/website/index.html">Website</a>
 </p>
 
 | Student's name | SCIPER |
