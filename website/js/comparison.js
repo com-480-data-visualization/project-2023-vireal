@@ -1,0 +1,24 @@
+const csvFilePath = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/coffee_quality/arabica_data_cleaned.csv";
+
+d3.csv(csvFilePath).then(function(data) {
+  // Extract the columns we're interested in
+  const columns = ["Aroma","Flavor","Aftertaste","Acidity","Body","Balance","Sweetness"];
+  const columnData = data.map(function(d) {
+    return columns.map(function(column) {
+      return parseFloat(d[column]);
+    });
+  });
+
+  // Compute the means of each column
+  const means = columns.map(function(column, i) {
+    const values = columnData.map(function(row) {
+      return row[i];
+    });
+    const sum = d3.sum(values);
+    return { name: column, mean: (sum / values.length).toFixed(2) };
+  });
+
+  // Output the means to a textarea element
+  const textArea = d3.select("#output");
+  textArea.text("Means:\n\n" + means.map(function(d) { return d.name + ": " + d.mean; }).join("\n"));
+});

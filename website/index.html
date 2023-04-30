@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta charset="utf-8">
+    <title>Coffee Quality Comparison</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="./js/comparison.js"></script>
+    <style>
+      /* Set the width and height of the pages and center the text vertically */
+      body {
+        margin: 0;
+        padding: 0;
+        height: 200vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 2em;
+        scroll-snap-type: y mandatory;
+      }
+      /* Style the first page */
+      #page1 {
+        background-color: #FFC300;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      /* Style the second page */
+      #page2 {
+        background-color: #3498DB;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- First page -->
+    <div id="page1" class="page">
+       <h1>Coffee Quality Comparison</h1>
+       <p>The means of the selected columns are displayed below:</p>
+       <textarea id="output" rows="7" cols="50"></textarea>
+    </div>
+    
+    <!-- Second page -->
+    <div id="page2" class="page">
+      <p>This is the second page</p>
+    </div>
+
+    <script>
+      // Listen for scroll events and switch to the next page
+      let currentPage = 0;
+      const pages = document.querySelectorAll('.page');
+      window.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        if (e.deltaY > 0 && currentPage < pages.length - 1) {
+          currentPage++;
+        } else if (e.deltaY < 0 && currentPage > 0) {
+          currentPage--;
+        }
+        pages[currentPage].scrollIntoView({behavior: 'smooth'});
+      });
+    </script>
+  </body>
+</html>
+
