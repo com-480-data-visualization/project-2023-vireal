@@ -19,16 +19,21 @@
 }
 
 .coffee-image {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-height: 40%;
   max-width: 40%;
+
 }
 
 .progress-bar {
     margin-top: 10px; /* add some space between the image and the progress bar */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .progress {
