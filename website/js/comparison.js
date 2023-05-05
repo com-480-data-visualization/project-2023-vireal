@@ -23,5 +23,4 @@ loadQualityDB = function(data,name) {
   });
 
   console.log(means);
-  document.getElementById('progress').value = 10;
 };
