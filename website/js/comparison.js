@@ -1,12 +1,12 @@
 const csvArabica = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/coffee_quality/arabica_data_cleaned.csv";
-const csvRobusta = "https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/data/coffee_quality/robusta_data_cleaned.csv";
+const csvRobusta = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/coffee_quality/robusta_data_cleaned.csv";
 
 d3.csv(csvArabica).then(function(data) {loadQualityDB(data,"arabica")});
 d3.csv(csvRobusta).then(function(data) {loadQualityDB(data,"robusta")});
 
 loadQualityDB = function(data,name) {
   // Extract the columns we're interested in
-  const columns = ["Aroma","Flavor","Aftertaste","Acidity","Body","Balance","Sweetness"];
+  const columns = ["Aroma","Flavor","Aftertaste","Acidity","Balance","Sweetness"];
   const columnData = data.map(function(d) {
     return columns.map(function(column) {
       return parseFloat(d[column]);
@@ -22,8 +22,6 @@ loadQualityDB = function(data,name) {
     return { name: column, mean: (sum / values.length).toFixed(2) };
   });
 
-  // Output the means to a textarea element
-  const json_quality = d3.select(name);
-  json_quality.text(JSON.stringify(means));
+  console.log(means);
   document.getElementById('progress').value = 10;
 };
