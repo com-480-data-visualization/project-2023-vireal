@@ -5,40 +5,14 @@
     <title>Coffee Quality Comparison</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="./js/comparison.js"></script>
-    <style>
-      /* Set the width and height of the pages and center the text vertically */
-      body {
-        margin: 0;
-        padding: 0;
-        height: 200vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        font-size: 2em;
-        scroll-snap-type: y mandatory;
-      }
-      /* Style the first page */
-      #page1 {
-        background-color: beige;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      /* Style the second page */
-      #page2 {
-        background-color: rosybrown;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
     <!-- First page -->
     <div id="page1" class="page">
-       <textarea id="output" rows="7" cols="50"></textarea>
+      <div class="image arabica"></div>
+      <div class="image robusta"></div>
+       <!--<textarea id="output" rows="7" cols="50"></textarea>-->
     </div>
     
     <!-- Second page -->
