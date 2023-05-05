@@ -4,7 +4,9 @@
 <p align="center">
      <a href="https://com-480-data-visualization.github.io/project-2023-vireal/milestone2/milestone2.pdf">Milestone 2 report</a>
 </p>
+
 ## Website
+
 <p align="center">
      <a href="https://com-480-data-visualization.github.io/project-2023-vireal/website/index.html">Website</a>
 </p>
