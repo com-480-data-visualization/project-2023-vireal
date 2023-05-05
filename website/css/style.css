@@ -1,131 +1,140 @@
 .container {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
 }
 
 .half {
-  flex-grow: 1;
-  height: 100%;
-  position: relative;
+    flex-grow: 1;
+    height: 100%;
+    position: relative;
 }
 
 .arabica {
-  background-color: #F5DEB3;
+    background-color: #F5DEB3;
 }
 
 .robusta {
-  background-color: #D2B48C;
+    background-color: #D2B48C;
 }
 
 .coffee-image {
-  position: relative;
-  top: 18%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-height: 40%;
-  max-width: 40%;
+    position: relative;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 40%;
+    max-width: 40%;
 
 }
 
 .title {
     position: absolute;
-  align-content: center;
-  top: 30vh;
-  left: 25vh;
+    align-content: center;
+    top: 30vh;
+    left: 25vh;
     right: 25vh;
 }
 
 .progress-wrapper {
-  top: 45vh;
-  position: absolute;
-  margin-top: 10px;
-  left: 15vh;
-  right: 25vh;
+    top: 45vh;
+    position: absolute;
+    margin-top: 10px;
+    left: 15vh;
+    right: 25vh;
 }
 
 .progress-label {
-  display: inline-block;
-  margin-right: 10px;
-  vertical-align: middle;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
 .progress-bar-wrapper {
-  display: inline-block;
-  vertical-align: middle;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .progress-bar {
-  width: 100%;
-  color: saddlebrown;
+    width: 100%;
+    color: saddlebrown;
 }
+
 .p1 {
-     bottom: 5vh;
+    bottom: 5vh;
 }
 
 .progress {
     width: 100%; /* make the progress bar fill the entire width of the container */
     height: 10px; /* set the height of the progress bar */
 }
-  /* Set the width and height of the pages and center the text vertically */
-      body {
-        margin: 0;
-        padding: 0;
-        height: 700vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        font-size: 2em;
-        scroll-snap-type: y mandatory;
-      }
-       #page0 {
-        background-color: saddlebrown;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      /* Style the first page */
-      #page1 {
-        background-color: beige;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      /* Style the second page */
-      #page2 {
-        background-color: rosybrown;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-       #page3 {
-        background-color: bisque;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-        #page4 {
-        background-color: darksalmon;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-         #page5 {
-        background-color: azure;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-          #page6 {
-        background-color: lightgoldenrodyellow;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+
+/* Set the width and height of the pages and center the text vertically */
+body {
+    margin: 0;
+    padding: 0;
+    height: 700vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 2em;
+    scroll-snap-type: y mandatory;
+}
+
+#page0 {
+    background-color: saddlebrown;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the first page */
+#page1 {
+    background-color: beige;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the second page */
+#page2 {
+    background-color: rosybrown;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page3 {
+    background-color: bisque;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page4 {
+    background-color: darksalmon;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page5 {
+    background-color: azure;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page6 {
+    background-color: lightgoldenrodyellow;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,67 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-     <meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
     <title>Coffee Quality Comparison</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="./js/comparison.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-  </head>
-  <body>
-   <div id="page0" class="page">
-      <p>This is the second page</p>
-    </div>
-    <!-- First page -->
-    <div id="page1" class="page">
-         </div>
+</head>
+<body>
+<div id="page0" class="page">
+    <p>This is the second page</p>
+</div>
+<!-- First page -->
+<div id="page1" class="page">
+</div>
 
 
-    <!-- Second page -->
-    <div id="page2" class="page">
-      <p>This is the second page</p>
+<!-- Second page -->
+<div id="page2" class="page">
+    <p>This is the second page</p>
+</div>
+
+<div id="page3" class="page">
+    <p>This is the second page</p>
+</div>
+<div id="page4" class="page">
+    <div class="half arabica">
+        <img src="imgs/arabica.png" class="coffee-image" alt="abc">
     </div>
 
-     <div id="page3" class="page">
-      <p>This is the second page</p>
-    </div>
-     <div id="page4" class="page">
-           <div class="half arabica">
-             <img src="imgs/arabica.png" class="coffee-image" alt="abc">
+    <div class="half robusta">
+        <h1 class="title">Robusta</h1>
+        <img src="imgs/robusta.png" class="coffee-image" alt="rbs">
+        <div class="progress-wrapper">
+            <div class="progress-label">Aroma:</div>
+            <div class="progress-bar-wrapper">
+                <progress class="progress-bar" max="100" value="50"></progress>
+            </div>
         </div>
-
-        <div class="half robusta">
-            <h1 class="title">Robusta</h1>
-             <img src="imgs/robusta.png" class="coffee-image" alt="rbs" >
-           <div class="progress-wrapper">
-  <div class="progress-label">Aroma:</div>
-  <div class="progress-bar-wrapper">
-    <progress class="progress-bar" max="100" value="50"></progress>
-  </div>
     </div>
-             </div>
-    </div>
-     <div id="page5" class="page">
-      <p>This is the second page</p>
-    </div>
-     <div id="page6" class="page">
-      <p>This is the second page</p>
-    </div>
+</div>
+<div id="page5" class="page">
+    <p>This is the second page</p>
+</div>
+<div id="page6" class="page">
+    <p>This is the second page</p>
+</div>
 
 
-    <script>
-      // Listen for scroll events and switch to the next page
-      let currentPage = 0;
-      const pages = document.querySelectorAll('.page');
-      window.addEventListener('wheel', (e) => {
+<script>
+    // Listen for scroll events and switch to the next page
+    let currentPage = 0;
+    const pages = document.querySelectorAll('.page');
+    window.addEventListener('wheel', (e) => {
         e.preventDefault();
         if (e.deltaY > 0 && currentPage < pages.length - 1) {
-          currentPage++;
+            currentPage++;
         } else if (e.deltaY < 0 && currentPage > 0) {
-          currentPage--;
+            currentPage--;
         }
-       pages[currentPage].scrollIntoView({behavior: 'smooth'});
-      });
-    </script>
-  </body>
+        pages[currentPage].scrollIntoView({behavior: 'smooth'});
+    });
+</script>
+</body>
 </html>
 
