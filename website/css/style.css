@@ -21,6 +21,15 @@
 	background-image: url(../imgs/robusta.png);
 	background-color: #D2B48C;
 }
+
+.progress-bar {
+    margin-top: 10px; /* add some space between the image and the progress bar */
+}
+
+.progress {
+    width: 100%; /* make the progress bar fill the entire width of the container */
+    height: 10px; /* set the height of the progress bar */
+}
   /* Set the width and height of the pages and center the text vertically */
       body {
         margin: 0;
