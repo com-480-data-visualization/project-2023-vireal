@@ -71,12 +71,19 @@
       body {
         margin: 0;
         padding: 0;
-        height: 600vh;
+        height: 700vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         font-size: 2em;
         scroll-snap-type: y mandatory;
+      }
+       #page0 {
+        background-color: saddlebrown;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       /* Style the first page */
       #page1 {
