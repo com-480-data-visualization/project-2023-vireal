@@ -20,7 +20,7 @@
 
 .coffee-image {
   position: relative;
-  top: 50%;
+  top: 18%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-height: 40%;
@@ -28,12 +28,39 @@
 
 }
 
-.progress-bar {
-    margin-top: 10px; /* add some space between the image and the progress bar */
+.title {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  align-content: center;
+  top: 30vh;
+  left: 25vh;
+    right: 25vh;
+}
+
+.progress-wrapper {
+  top: 45vh;
+  position: absolute;
+  margin-top: 10px;
+  left: 15vh;
+  right: 25vh;
+}
+
+.progress-label {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.progress-bar-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.progress-bar {
+  width: 100%;
+  color: saddlebrown;
+}
+.p1 {
+     bottom: 5vh;
 }
 
 .progress {
@@ -44,7 +71,7 @@
       body {
         margin: 0;
         padding: 0;
-        height: 200vh;
+        height: 600vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -62,6 +89,34 @@
       /* Style the second page */
       #page2 {
         background-color: rosybrown;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+       #page3 {
+        background-color: bisque;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+        #page4 {
+        background-color: darksalmon;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+         #page5 {
+        background-color: azure;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+          #page6 {
+        background-color: lightgoldenrodyellow;
         height: 100vh;
         display: flex;
         justify-content: center;
