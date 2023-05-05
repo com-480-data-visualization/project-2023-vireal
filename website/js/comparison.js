@@ -25,4 +25,5 @@ loadQualityDB = function(data,name) {
   // Output the means to a textarea element
   const json_quality = d3.select(name);
   json_quality.text(JSON.stringify(means));
+  document.getElementById('progress').value = 10;
 };

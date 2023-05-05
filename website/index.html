@@ -11,7 +11,10 @@
     <!-- First page -->
     <div id="page1" class="page">
       <div class="image arabica">
-       <div id="jsonOutput"></div>
+        <progress className={"progress"} id="progress"
+                  title={"On a scale from very objective (0%) to very subjective (100%), this text is: "}
+        max="100" value="90">
+        </progress>
       </div>
       <div class="image robusta"></div>
     </div>
