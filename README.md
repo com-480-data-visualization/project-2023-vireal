@@ -2,7 +2,7 @@
 
 ## Milestone 2
 <p align="center">
-     <a href="https://com-480-data-visualization.github.io/project-2023-vireal/milestone2/milestone2.pdf">Milestone 2 report</a>
+     <a href="https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/milestone2/milestone2.pdf">Milestone 2 report</a>
 </p>
 
 ## Website
