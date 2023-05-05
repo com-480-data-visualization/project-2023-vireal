@@ -1,6 +1,5 @@
-const csvArabica = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/coffee_quality/arabica_data_cleaned.csv";
-const csvRobusta = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/coffee_quality/robusta_data_cleaned.csv";
-
+const csvArabica = "../../data/coffee_quality/arabica_data_cleaned.csv";
+const csvRobusta = "../../data/coffee_quality/robusta_data_cleaned.csv"
 d3.csv(csvArabica).then(function(data) {loadQualityDB(data,"arabica")});
 d3.csv(csvRobusta).then(function(data) {loadQualityDB(data,"robusta")});
 
