@@ -1,24 +1,28 @@
 .container {
 	display: flex;
-	flex-direction: row;
-	height: 100vh;
+    flex-wrap: wrap; /* allow the images to wrap onto the next line */
+
 }
 
 .image {
-	flex-grow: 1;
-	height: 50%;
-	background-position: center center;
+	flex: 1;
+    margin: 10px; /* add some margin between the images */
+    background-position: center center;
 	background-repeat: no-repeat;
 	background-size: contain;
 }
 
 .arabica {
 	background-image: url(../imgs/arabica.png);
+    background-size: cover; /* make sure the image covers the entire container */
+    height: 300px; /* set the height of the image container */
 	background-color: #F5DEB3;
 }
 
 .robusta {
 	background-image: url(../imgs/robusta.png);
+    background-size: cover; /* make sure the image covers the entire container */
+    height: 300px; /* set the height of the image container */
 	background-color: #D2B48C;
 }
   /* Set the width and height of the pages and center the text vertically */
