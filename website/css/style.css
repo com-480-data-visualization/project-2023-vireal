@@ -6,7 +6,7 @@
 
 .image {
 	flex-grow: 1;
-	height: 100%;
+	height: 50%;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: contain;
