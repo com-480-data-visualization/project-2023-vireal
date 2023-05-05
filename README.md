@@ -1,10 +1,15 @@
 # Project of Data Visualization (COM-480)
 
+## Milestone 2
+<p align="center">
+     <a href="https://com-480-data-visualization.github.io/project-2023-vireal/milestone2/milestone2.pdf">Milestone 2 report</a>
+</p>
 ## Website
-
 <p align="center">
      <a href="https://com-480-data-visualization.github.io/project-2023-vireal/website/index.html">Website</a>
 </p>
+
+## Scipers
 
 | Student's name | SCIPER |
 | -------------- | ------ |
@@ -100,8 +105,6 @@ Additionally, we have consulted an extensive work about coffee data from three M
 
 With respect to data visualization, we found inspiration from a variety of sources, such as the New York Times interactive visualizations from [How the Recession Reshaped the Economy, in 255 Charts](https://www.nytimes.com/interactive/2014/06/05/upshot/how-the-recession-reshaped-the-economy-in-255-charts.html?mtrref=undefined&gwh=5F0F3A546EAF81E62FAAB4C396594B63&gwt=pay&assetType=PAYWALL) and [2014 “the year in interactive storytelling”](https://www.nytimes.com/interactive/2014/12/29/us/year-in-interactive-storytelling.html?_r=0&mtrref=undefined&gwh=80657AC26C34BEF1AE164D0F76F73C90&gwt=pay&assetType=PAYWALL). Besides, we have extensively consulted the website "FlowingData", mainly the article [One Dataset, Visualized 25 Ways](https://flowingdata.com/2017/01/24/one-dataset-visualized-25-ways/) and the [guides for chart types](https://flowingdata.com/chart-types/).
  
-
-## Milestone 2
 
 ## Milestone 3
 
