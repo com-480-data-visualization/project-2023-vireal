@@ -1,6 +1,10 @@
-const csvFilePath = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/coffee_quality/arabica_data_cleaned.csv";
+const csvArabica = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/coffee_quality/arabica_data_cleaned.csv";
+const csvRobusta = "https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/data/coffee_quality/robusta_data_cleaned.csv";
 
-d3.csv(csvFilePath).then(function(data) {
+d3.csv(csvArabica).then(loadQualityDB);
+d3.csv(csvRobusta).then(loadQualityDB);
+
+loadQualityDB = function(data) {
   // Extract the columns we're interested in
   const columns = ["Aroma","Flavor","Aftertaste","Acidity","Body","Balance","Sweetness"];
   const columnData = data.map(function(d) {
@@ -21,4 +25,4 @@ d3.csv(csvFilePath).then(function(data) {
   // Output the means to a textarea element
   const textArea = d3.select("#output");
   textArea.text("Means:\n\n" + means.map(function(d) { return d.name + ": " + d.mean; }).join("\n"));
-});
+};
