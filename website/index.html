@@ -13,7 +13,7 @@
 </div>
 
 <div id="page1" class="page">
-    <p  class="title_ms2">Coffe price</p>
+    <p  class="title_ms2">Coffee price</p>
     <img src="imgs/vis_price_coffee.png" alt="cof price" class="image_ms2" title="Coffee price">
 </div>
 
@@ -28,28 +28,136 @@
     <p>Coffee production and consumption flow</p>
     <img src="imgs/vis_map_arrows.png" alt="cof flow" class="image_ms2">
 </div>
-<div id="page4" class="page">
-    <div class="half arabica">
-        <h1 class="title">Arabica</h1>
-        <img src="imgs/arabica.png" class="coffee-image" alt="abc">
-        <div class="progress-wrapper">
-            <div class="progress-label">Aroma:</div>
-            <div class="progress-bar-wrapper">
-                <progress class="progress-bar" max="100" value="50"></progress>
-            </div>
-        </div>
-    </div>
 
-    <div class="half robusta">
-        <h1 class="title">Robusta</h1>
-        <img src="imgs/robusta.png" class="coffee-image" alt="rbs">
-        <div class="progress-wrapper">
-            <div class="progress-label">Aroma:</div>
-            <div class="progress-bar-wrapper">
-                <progress class="progress-bar" max="100" value="50"></progress>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div id="page4" class="page">
+
+        <div class="half arabica">
+            <h1 class="title">Arabica</h1>
+            <img src="imgs/arabica_hd.png" class="coffee-image" alt="abc">
+            <div class="progress-wrapper first-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-flask"></i> aroma
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="aroma_arabica" max="100" value="50"></progress>
+                </div>
             </div>
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-cookie-bite"></i> after-taste
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="taste_arabica" max="100" value="50"></progress>
+                </div>
+            </div>
+
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-lemon"></i> acidity
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="acidity_arabica" max="100" value="50"></progress>
+                </div>
+            </div>
+
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-weight"></i> body
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="body_arabica" max="100" value="50"></progress>
+                </div>
+            </div>
+
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-balance-scale"></i> balance
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="balance_arabica" max="100" value="50"></progress>
+                </div>
+            </div>
+
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-candy-cane"></i> sweetness
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="sweetness_arabica" max="100" value="50"></progress>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="imgs/altitude_arabica.png" alt="Sweetness Image">
+                <img src="imgs/temperature_arabica.png" alt="Sweetness Image">
+                <img src="imgs/caffeine_arabica.png" alt="Sweetness Image">
+            </div>
+
         </div>
-    </div>
+
+        <div class="half robusta">
+            <h1 class="title">Robusta</h1>
+            <img src="imgs/robusta_hd.png" class="coffee-image" alt="rbs">
+            <div class="progress-wrapper first-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-flask"></i> aroma
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="aroma_robusta" max="100" value="50"></progress>
+                </div>
+            </div>
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-cookie-bite"></i> after-taste
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="taste_robusta" max="100" value="50"></progress>
+                </div>
+            </div>
+
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-lemon"></i> acidity
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="acidity_robusta" max="100" value="50"></progress>
+                </div>
+            </div>
+
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-weight"></i> body
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="body_robusta" max="100" value="50"></progress>
+                </div>
+            </div>
+
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-balance-scale"></i> balance
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="balance_robusta" max="100" value="50"></progress>
+                </div>
+            </div>
+
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-candy-cane"></i> sweetness
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="sweetness_robusta" max="100" value="50"></progress>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="imgs/altitude_robusta.png" alt="Sweetness Image">
+                <img src="imgs/temperature_robusta.png" alt="Sweetness Image">
+                <img src="imgs/caffeine_robusta.png" alt="Sweetness Image">
+            </div>
+
+        </div>
 </div>
 <div id="page5" class="page">
     <p>Radar chart for the Arabica taste profile</p>

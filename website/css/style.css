@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway&display=swap');
+
 .container {
     display: flex;
     flex-direction: row;
-    height: 100vh;
 }
 
 .half {
@@ -10,8 +11,17 @@
     position: relative;
 }
 
+.image-wrapper img {
+    width: 100px;
+    height: 100px;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-left: 120px;
+    vertical-align: middle;
+}
+
 .arabica {
-    background-color: #F5DEB3;
+    background-color: floralwhite;
 }
 
 .image_ms2 {
@@ -26,7 +36,7 @@
 }
 
 .robusta {
-    background-color: #D2B48C;
+    background-color: floralwhite;
 }
 
 .coffee-image {
@@ -36,7 +46,24 @@
     transform: translate(-50%, -50%);
     max-height: 40%;
     max-width: 40%;
+    margin-top: 40px;
+}
 
+
+.header__center {
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-column-gap: 1.2rem;
+    align-items: center;
+}
+
+.header__center::before,
+.header__center::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: currentColor;
 }
 
 .title {
@@ -45,31 +72,47 @@
     top: 30vh;
     left: 25vh;
     right: 25vh;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 80px;
+    margin-left: 40px;
+}
+
+.first-progress-wrapper{
+    margin-top: 40px;
+}
+
+.middle-progress-wrapper{
+    margin-top: 10px;
 }
 
 .progress-wrapper {
-    top: 45vh;
-    position: absolute;
-    margin-top: 10px;
-    left: 15vh;
-    right: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .progress-label {
-    display: inline-block;
     margin-right: 10px;
-    vertical-align: middle;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    display: inline-block;
+    min-width: 120px;
 }
 
 .progress-bar-wrapper {
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
 }
 
 .progress-bar {
     width: 100%;
     color: saddlebrown;
 }
+
+.progress-bar::-webkit-progress-value {
+    background-color: green; /* Change this to the desired color */
+}
+
 
 .p1 {
     bottom: 5vh;
