@@ -1,6 +1,6 @@
 let countryURL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json"
-let importJSON = "../../data/map_imports.json"
-let exportJSON = "../../data/map_exports.json"
+let importJSON = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/map_imports.json"
+let exportJSON = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/map_exports.json"
 
 let countryData
 let importData
