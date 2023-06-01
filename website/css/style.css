@@ -94,12 +94,40 @@ body {
 
 #page0 {
     background-color: bisque;
+     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.scroll-container {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100vw;
+    height: 100vh;
+}
+
+.scroll-content {
+    display: flex;
+    flex-direction: row;
+    transition: transform 0.3s ease-in-out;
+    width: max-content; /* Adjust width to fit the content */
+}
+
+.section {
+    min-width: 100vw; /* Ensure each section occupies the full viewport width */
+    flex-shrink: 0;
+}
+
+#page0 #sec1 {
+  background-image: url("../imgs/coffee_website.png");
+  background-size: cover;
+  background-position: center;
+}
 /* Style the first page */
 #page1 {
     background-color: beige;
@@ -134,12 +162,24 @@ body {
     align-items: center;
 }
 
+
 #page5 {
-    background-color: azure;
+    background:#f5e4c9 linear-gradient(68deg,floralwhite 0%,floralwhite 50%, transparent 50%);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#page5 #radar-chart {
+      width: 700px;
+      height: 700px;
+
+    }
+#page5 #content5 {
+    position: absolute;
+    height: 60vh;
+    right: 10vh;
 }
 
 #page6 {

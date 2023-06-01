@@ -5,11 +5,53 @@
     <title>Coffee Quality Comparison</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="./js/comparison.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+<script>
+ document.addEventListener("DOMContentLoaded", function() {
+  // Horizontal scrolling
+  const scrollContainer = document.querySelector('.scroll-container');
+  const scrollContent = document.querySelector('.scroll-content');
+  const sections = document.querySelectorAll('.section');
+  let currentSection = 0;
+
+  function scrollToSection(index) {
+      currentSection = index;
+      const section = sections[currentSection];
+      scrollContent.style.transform = `translateX(-${section.offsetLeft}px)`;
+  }
+
+  // Listen for button clicks and switch to the next section
+  const buttons = document.querySelectorAll('.navigation button');
+  buttons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+          scrollToSection(index);
+      });
+  });
+});
+</script>
+
 <div id="page0" class="page">
-    <p>Introduction</p>
+    <div class="scroll-container">
+        <div class="scroll-content">
+            <section id="sec1" class="section">
+                <p class="title_ms2">Chapter 1</p>
+            </section>
+            <section id="sec2" class="section">
+                <p class="title_ms2">Chapter 2</p>
+            </section>
+            <section id="sec3" class="section">
+                <p class="title_ms2">Chapter 3</p>
+            </section>
+        </div>
+    </div>
+    <div class="navigation">
+        <button onclick="scrollToSection(0)">Chapter 1</button>
+        <button onclick="scrollToSection(1)">Chapter 2</button>
+        <button onclick="scrollToSection(2)">Chapter 3</button>
+    </div>
 </div>
 
 <div id="page1" class="page">
@@ -51,10 +93,14 @@
         </div>
     </div>
 </div>
-<div id="page5" class="page">
-    <p>Radar chart for the Arabica taste profile</p>
-    <img src="imgs/vis_taste_profile.png" alt="taste profile" class="image_ms2">
-</div>
+ <div id="page5" class="page">
+     <div id="content5">
+       <select id="dataset-selector"></select>
+       <canvas id="radar-chart"></canvas>
+       <script src="js/radar.js"></script>
+     </div>
+  </div>
+
 <div id="page6" class="page">
     <p>Conclusion and references</p>
 </div>
