@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
 .container {
     display: flex;
     flex-direction: row;
-    height: 100vh;
 }
 
 .half {
@@ -10,8 +13,17 @@
     position: relative;
 }
 
+.image-wrapper img {
+    width: 100px;
+    height: 100px;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-left: 120px;
+    vertical-align: middle;
+}
+
 .arabica {
-    background-color: #F5DEB3;
+    background-color: floralwhite;
 }
 
 .image_ms2 {
@@ -26,7 +38,7 @@
 }
 
 .robusta {
-    background-color: #D2B48C;
+    background-color: floralwhite;
 }
 
 .coffee-image {
@@ -36,7 +48,24 @@
     transform: translate(-50%, -50%);
     max-height: 40%;
     max-width: 40%;
+    margin-top: 40px;
+}
 
+
+.header__center {
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-column-gap: 1.2rem;
+    align-items: center;
+}
+
+.header__center::before,
+.header__center::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: currentColor;
 }
 
 .title {
@@ -45,31 +74,47 @@
     top: 30vh;
     left: 25vh;
     right: 25vh;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 80px;
+    margin-left: 40px;
+}
+
+.first-progress-wrapper{
+    margin-top: 40px;
+}
+
+.middle-progress-wrapper{
+    margin-top: 10px;
 }
 
 .progress-wrapper {
-    top: 45vh;
-    position: absolute;
-    margin-top: 10px;
-    left: 15vh;
-    right: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .progress-label {
-    display: inline-block;
     margin-right: 10px;
-    vertical-align: middle;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    display: inline-block;
+    min-width: 120px;
 }
 
 .progress-bar-wrapper {
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
 }
 
 .progress-bar {
     width: 100%;
     color: saddlebrown;
 }
+
+.progress-bar::-webkit-progress-value {
+    background-color: green; /* Change this to the desired color */
+}
+
 
 .p1 {
     bottom: 5vh;
@@ -102,7 +147,7 @@ body {
 
 /* Style the first page */
 #page1 {
-    background-color: beige;
+    background-color: floralwhite;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -149,3 +194,183 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.cup {
+    position: relative;
+    width: 220px;
+    height: 210px;
+    border: 8px solid #ffefdb;
+    box-shadow: 0 0 0 12px #352a22;
+    border-radius: 10px 10px 60px 75px;
+    background: url('../imgs/coffee.png');
+    background-repeat: repeat-x;
+    animation: filling 4s infinite;
+    margin: 0 auto;
+
+}
+
+@keyframes filling {
+    0% {
+        background-position: 100px 100px;
+    }
+
+    50% {
+
+    }
+
+    100%{
+    }
+
+}
+
+.cup .cup-handle {
+    position: absolute;
+    top: 10px;
+    right: -74px;
+    width: 65px;
+    height: 120px;
+    border: 12px solid #352a22;
+    border-radius: 20px 10px 50px 20px;
+}
+
+.cup .steam {
+    position: absolute;
+    border-radius: 10px 2px;
+    width: 8px;
+    animation: steaming 2s infinite;
+}
+
+@keyframes steaming {
+    0%, 100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+        filter: blur(.8px);
+        transform: translateY(-10px);
+    }
+}
+
+.cup .steam:nth-child(1) {
+    top: -70px;
+    left: 65px;
+    height: 30px;
+    background: #8e5a3423;
+    animation-delay: .2s;
+}
+
+.cup .steam:nth-child(2) {
+    top: -120px;
+    left: 95px;
+    height: 50px;
+    background: #8e5a3454;
+    animation-delay: .6s;
+}
+
+.cup .steam:nth-child(3) {
+    top: -90px;
+    left: 125px;
+    height: 40px;
+    background: #8e5a3433;
+    animation-delay: 1s;
+}
+
+.slidecontainer {
+    width: 50%; /* Width of the outside container */
+    position: relative;
+    top: -50px;
+    text-align: center;
+    margin-right: 30px;
+    margin-top: 300px; /* Adjust the margin as needed */
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: saddlebrown;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: saddlebrown;
+    cursor: pointer;
+}
+
+.slider-label {
+    position: absolute;
+    top: -30px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.left-label {
+    position: absolute;
+    left: 0;
+    top: -20px; /* Adjust as needed */
+}
+
+.right-label {
+    position: absolute;
+    right: 0;
+    top: -20px; /* Adjust as needed */
+}
+
+.middle-label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20px; /* Adjust as needed */
+}
+
+.dollar_title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    top: 10px;
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.dollar_image {
+    display: block;
+    width: 90px;
+    height: 90px;
+}
+
+.container_slider {
+    position: absolute;
+    text-align: center;
+    margin-top: -80px;
+    margin-left: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#year {
+    font-size: 16px; /* Adjust the font size as needed */
+}
+
