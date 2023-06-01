@@ -1,11 +1,15 @@
 const csvArabica = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/coffee_quality/arabica_data_cleaned.csv";
 const csvRobusta = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/coffee_quality/robusta_data_cleaned.csv";
+const csvPrice = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/prices_historical/coffee-prices-historical-chart-data.csv";
 
 d3.csv(csvArabica).then(function (data) {
     loadQualityDBArabica(data, "arabica")
 });
 d3.csv(csvRobusta).then(function (data) {
     loadQualityDBRobusta(data, "robusta")
+});
+d3.csv(csvPrice).then(function (data) {
+    updatePrice(data)
 });
 
 loadQualityDBArabica = function (data, name) {
@@ -64,3 +68,73 @@ loadQualityDBRobusta = function (data, name) {
     document.getElementById("balance_robusta").value = (means[5].mean - 7) * 100 ;
     document.getElementById("sweetness_robusta").value = (means[6].mean - 7) * 100 ;
 };
+
+updatePrice = function (data){
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+
+    var yearData = {}; // Object to store mean values per year
+    data.forEach(function(entry) {
+        var year = entry.date.split("-")[0]; // Extract year from the date
+        var value = parseFloat(entry.value); // Convert value to a numeric value
+        if (!yearData.hasOwnProperty(year)) {
+            yearData[year] = []; // Create an array for the year if it doesn't exist
+        }
+        yearData[year].push(value); // Add value to the year's array
+    });
+
+    // Calculate the mean value per year
+    var meanData = {};
+    for (var year in yearData) {
+        var values = yearData[year];
+        var sum = values.reduce(function(acc, val) { return acc + val; }, 0);
+        var mean = sum / values.length;
+        meanData[year] = mean;
+    }
+
+// Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function() {
+        var year = 1973 + parseInt(this.value, 10); // Adjust as needed based on your slider value
+        document.getElementById("year").value = year;
+        var meanValue = meanData[year];
+        if(meanValue < 1){
+            var pos = 10;
+        }
+        else{
+            var pos = 10 + (meanValue - 1) * 100;
+        }
+
+        document.getElementById("cup").style.backgroundPosition = "0 " + pos + "px";
+
+        // Get the style sheet
+        var styleSheet = document.styleSheets[0];
+
+// Find the keyframes rule
+        var keyframesRule;
+        for (var i = 0; i < styleSheet.cssRules.length; i++) {
+            var rule = styleSheet.cssRules[i];
+            if (rule.name === 'filling') {
+                keyframesRule = rule;
+                break;
+            }
+        }
+
+// Update the background-position values
+        if (keyframesRule) {
+            var keyframes = keyframesRule.cssRules;
+
+            // Update 0% keyframe
+            var zeroPercent = keyframes[0];
+            zeroPercent.style.backgroundPosition = "100px " + pos + "px"; // Modify the values as desired
+
+            // Update 50% keyframe
+            var fiftyPercent = keyframes[1];
+            //fiftyPercent.style.backgroundPosition = '300px 200px'; // Modify the values as desired
+        }
+
+    }
+}
+
+
+
+
