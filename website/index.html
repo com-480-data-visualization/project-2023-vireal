@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Coffee Quality Comparison</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
     <script src="./js/comparison.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -80,15 +82,75 @@
 
 <div id="page2" class="page">
     <p class="title_ms2">Coffee production and consumption metrics</p>
-    <img src="imgs/vis_map_final.png" alt="cof metrics" class="image_ms2">
+    <div id='container1' class='container'>
+        <svg id='canvas1' class='canvas'>
+
+        </svg>
+        <div id='rightSide1' class='rightSide'>
+            <div id='tooltip1' class='tooltip'>
+
+            </div>
+            <svg id='legend1' class='legend'>
+                <g>
+                    <rect x="10" y="0" width="40" height="40" fill="tomato"></rect>
+                    <text x="60" y="20" fill="white">Less than 15%</text>
+                </g>
+                <g>
+                    <rect x="10" y="40" width="40" height="40" fill="orange"></rect>
+                    <text x="60" y="60" fill="white">15% than 30%</text>
+                </g>
+                <g>
+                    <rect x="10" y="80" width="40" height="40" fill="lightgreen"></rect>
+                    <text x="60" y="100" fill="white">30% to 45%</text>
+                </g>
+                <g>
+                    <rect x="10" y="120" width="40" height="40" fill="limegreen"></rect>
+                    <text x="60" y="140" fill="white">More than 45%</text>
+                </g>
+            </svg>
+            <div id='description1' class='description'>write text. Source: <a href='todo link'>todo</a></div>
+        </div>
+    </div>
+    <script defer src='js/map_producers.js'></script>
 </div>
+
+
+
+
 
 <div id="page3" class="page">
-    <p>Coffee production and consumption flow</p>
-    <img src="imgs/vis_map_arrows.png" alt="cof flow" class="image_ms2">
-</div>
+    <p class="title_ms3">Coffee production and consumption flow</p>
+    <div id='container2' class='container'>
+        <svg id='canvas2' class='canvas'>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        </svg>
+        <div id='rightSide2' class='rightSide'>
+            <div id='tooltip2' class='tooltip'>
+
+            </div>
+            <svg id='legend2' class='legend'>
+                <g>
+                    <rect x="10" y="0" width="40" height="40" fill="tomato"></rect>
+                    <text x="60" y="20" fill="white">Less than 15%</text>
+                </g>
+                <g>
+                    <rect x="10" y="40" width="40" height="40" fill="orange"></rect>
+                    <text x="60" y="60" fill="white">15% than 30%</text>
+                </g>
+                <g>
+                    <rect x="10" y="80" width="40" height="40" fill="lightgreen"></rect>
+                    <text x="60" y="100" fill="white">30% to 45%</text>
+                </g>
+                <g>
+                    <rect x="10" y="120" width="40" height="40" fill="limegreen"></rect>
+                    <text x="60" y="140" fill="white">More than 45%</text>
+                </g>
+            </svg>
+            <div id='description2' class='description'>write text. Source: <a href='todo link'>todo</a></div>
+        </div>
+    </div>
+    <script defer src='js/map_flow_producers.js'></script>
+</div>
 
 <div id="page4" class="page">
 
