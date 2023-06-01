@@ -306,7 +306,7 @@ body {
     border: 8px solid #ffefdb;
     box-shadow: 0 0 0 12px #352a22;
     border-radius: 10px 10px 60px 75px;
-    background: url('../imgs/coffee.png');
+    background: url("../imgs/coffee.png");
     background-repeat: repeat-x;
     animation: filling 4s infinite;
     margin: 0 auto;
