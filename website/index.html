@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Coffee Quality Comparison</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -13,7 +14,23 @@
         <p>Introduction</p>
     </div>
     <div id="price_page" class="page">
-        <p>Price</p>
+        <div class="cup" id="cup">
+            <span class="steam"></span>
+            <span class="steam"></span>
+            <span class="steam"></span>
+            <div class="cup-handle"></div>
+        </div>
+        <div class="slider_text">
+            <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/money.png"  class="dollar_image" alt="dollar image" width="90" height="90">
+            <div class="dollar_title"> gives you approximatly this amount of coffee in: </div>
+        </div>
+        <div class="slide_container">
+            <div class="slider-label left-label">1973</div>
+            <div class="slider-label middle-label">1998</div>
+            <div class="slider-label right-label">2022</div>
+            <input type="range" min="0" max="49" value="20" class="slider" id="myRange">
+            <output name="result" id="year" for="myRange">1933</output>
+        </div>
     </div>
 
     <div id="map_page" class="page">
@@ -58,7 +75,134 @@
     </div>
 
     <div id="comparison_page" class="page">
-        <p>Comparison</p>
+        <div class="half">
+            <h1 class="title">Arabica</h1>
+            <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/arabica_hd.png" class="coffee-image" alt="abc">
+            <div class="progress-wrapper first-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-flask"></i> aroma
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="aroma_arabica" max="100" value="50"></progress>
+                </div>
+            </div>
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-cookie-bite"></i> after-taste
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="taste_arabica" max="100" value="50"></progress>
+                </div>
+            </div>
+
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-lemon"></i> acidity
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="acidity_arabica" max="100" value="50"></progress>
+                </div>
+            </div>
+
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-weight"></i> body
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="body_arabica" max="100" value="50"></progress>
+                </div>
+            </div>
+
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-balance-scale"></i> balance
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="balance_arabica" max="100" value="50"></progress>
+                </div>
+            </div>
+
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-candy-cane"></i> sweetness
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="sweetness_arabica" max="100" value="50"></progress>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/altitude_arabica.png" alt="Sweetness Image">
+                <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/temperature_arabica.png" alt="Sweetness Image">
+                <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/caffeine_arabica.png" alt="Sweetness Image">
+            </div>
+        </div>
+
+        <div class="h-100">
+            <img class="position-absolute w-100 h-100" src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/about.png" style="object-fit: cover;">
+        </div>
+
+        <div class="half">
+            <h1 class="title">Robusta</h1>
+            <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/robusta_hd.png" class="coffee-image" alt="rbs">
+            <div class="progress-wrapper first-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-flask"></i> aroma
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="aroma_robusta" max="100" value="50"></progress>
+                </div>
+            </div>
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-cookie-bite"></i> after-taste
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="taste_robusta" max="100" value="50"></progress>
+                </div>
+            </div>
+
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-lemon"></i> acidity
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="acidity_robusta" max="100" value="50"></progress>
+                </div>
+            </div>
+
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-weight"></i> body
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="body_robusta" max="100" value="50"></progress>
+                </div>
+            </div>
+
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-balance-scale"></i> balance
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="balance_robusta" max="100" value="50"></progress>
+                </div>
+            </div>
+
+            <div class="progress-wrapper middle-progress-wrapper">
+                <div class="progress-label">
+                    <i class="fas fa-candy-cane"></i> sweetness
+                </div>
+                <div class="progress-bar-wrapper">
+                    <progress class="progress-bar" id="sweetness_robusta" max="100" value="50"></progress>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/altitude_robusta.png" alt="Sweetness Image">
+                <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/temperature_robusta.png" alt="Sweetness Image">
+                <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/caffeine_robusta.png" alt="Sweetness Image">
+            </div>
+        </div>
+
     </div>
 
     <div id="taste_page" class="page">
