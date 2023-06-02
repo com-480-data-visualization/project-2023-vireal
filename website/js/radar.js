@@ -8,7 +8,7 @@ var chartContainer = d3.select("#radar-chart").node()
 var ctx = chartContainer.getContext('2d');
 
 
-d3.dsv("|","../../data/filtered_varieties.csv").then(function(csvData) {
+d3.dsv("|","https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/filtered_varieties.csv").then(function(csvData) {
 
   // Parse the CSV data and convert it into an array of objects
   var data = csvData.map(function(d) {
