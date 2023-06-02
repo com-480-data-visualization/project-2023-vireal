@@ -58,17 +58,17 @@ body {
  *
  *
  */
-#page5 {
+#taste_page {
     background:#f5e4c9 linear-gradient(68deg,floralwhite 0%,floralwhite 50%, transparent 50%);
 }
 
-#page5 #radar-chart {
+#taste_page #radar-chart {
     width: 700px;
     height: 700px;
 
 }
-#page5 #taste_container {
-    position: absolute;
+#taste_page #taste_container {
+    position: relative;
     height: 60vh;
     right: 10vh;
 }
