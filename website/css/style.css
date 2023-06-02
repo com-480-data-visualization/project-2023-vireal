@@ -58,6 +58,7 @@ body {
  *
  *
  */
+
 #taste_page {
     background:#f5e4c9 linear-gradient(68deg,floralwhite 0%,floralwhite 50%, transparent 50%);
 }
@@ -70,7 +71,7 @@ body {
 #taste_page #taste_container {
     position: relative;
     height: 60vh;
-    right: 10vh;
+    left: 55vh;
 }
 
 select.styled-select {
