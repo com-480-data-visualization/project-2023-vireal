@@ -53,6 +53,24 @@ body {
  *
  *
  *
+ * Page map
+ *
+ *
+ *
+ */
+.map_canvas {
+    min-height: 600px;
+    min-width: 950px;
+    background-color: rgb(204, 200, 240);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/*
+ *
+ *
+ *
  * Page taste
  *
  *
