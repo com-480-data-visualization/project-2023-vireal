@@ -1,365 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Coffee Quality Comparison</title>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
-    <script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
-    <script src="js/comparison.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-<script>
- document.addEventListener("DOMContentLoaded", function() {
-  // Horizontal scrolling
-  const scrollContainer = document.querySelector('.scroll-container');
-  const scrollContent = document.querySelector('.scroll-content');
-  const sections = document.querySelectorAll('.section');
-  let currentSection = 0;
+<div id="main-scroll-container" class="vertical-scroll-container">
+    <div id="introduction_page" class="page">
+        <p>Introduction</p>
+    </div>
+    <div id="price_page" class="page">
+        <p>Price</p>
+    </div>
 
-  function scrollToSection(index) {
-      currentSection = index;
-      const section = sections[currentSection];
-      scrollContent.style.transform = `translateX(-${section.offsetLeft}px)`;
-  }
+    <div id="map_page" class="page">
 
-  // Listen for button clicks and switch to the next section
-  const buttons = document.querySelectorAll('.navigation button');
-  buttons.forEach((button, index) => {
-      button.addEventListener('click', () => {
-          scrollToSection(index);
-      });
-  });
-});
-</script>
+        <p class="title_ms2">Coffee production and consumption metrics</p>
 
-<div id="page7">
-    <section class="hero">
-        <header>
-            <nav>
-                <div class="logo">
-                    <span class="dot"></span>
-                    ViReal <br />
-                    <span class="dot"></span>
-                </div>
-                <input type="checkbox" id="check" />
-                <label for="check" class="menu">
-                    <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="30"
-                            height="30"
-                            fill="currentColor"
-                            class="bi bi-list"
-                            viewBox="0 0 16 16"
-                    >
-                        <path
-                                fill-rule="evenodd"
-                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-                        />
-                    </svg>
-                </label>
-                <div class="nav-links">
-                    <a href="#page0" class="active">Introduction</a>
-                    <a href="#page1">Price</a>
-                    <a href="#page2">Export/Import</a>
-                    <a href="#page4">Comparison</a>
-                    <a href="#page6">Conclusion</a>
-                </div>
-            </nav>
-        </header>
-        <div class="intro">
-            <div>
-                <h1>Coffee</h1>
-                <h2>A Never Ending Story</h2>
-            </div>
-        </div>
+        <div id="map1_main_container" class="map_main_container">
+            <div id='map1_container' class='map_container'>
+                <svg id='map1_canvas' class='map_canvas'>
 
-        <div class="scroll">
-            <a href="#brands">
-                <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        fill="currentColor"
-                        class="bi bi-arrow-down"
-                        viewBox="0 0 16 16"
-                >
-                    <path
-                            fill-rule="evenodd"
-                            d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                    />
                 </svg>
-                <span
-                >Scroll Down to <br />
-            Learn More</span
-                >
-            </a>
-        </div>
-    </section>
-</div>
+                <div id='rightSide1' class='rightSide'>
+                    <div id='tooltip1' class='tooltip'>
 
-<div id="page0" class="page">
-    <div class="scroll-container">
-        <div class="scroll-content">
-            <section id="sec1" class="section">
-                <p class="title_ms2">Chapter 1</p>
-            </section>
-            <section id="sec2" class="section">
-                <p class="title_ms2">Chapter 2</p>
-            </section>
-            <section id="sec3" class="section">
-                <p class="title_ms2">Chapter 3</p>
-            </section>
-        </div>
-    </div>
-    <div class="navigation">
-        <button onclick="scrollToSection(0)">Chapter 1</button>
-        <button onclick="scrollToSection(1)">Chapter 2</button>
-        <button onclick="scrollToSection(2)">Chapter 3</button>
-    </div>
-</div>
-
-<div id="page1" class="page">
-    <div class="cup" id="cup">
-        <span class="steam"></span>
-        <span class="steam"></span>
-        <span class="steam"></span>
-        <div class="cup-handle"></div>
-    </div>
-    <div class="container_slider">
-        <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/money.png"  class="dollar_image" alt="dollar image" width="90" height="90">
-        <div class="dollar_title"> gives you approximatly this amount of coffee in: </div>
-    </div>
-    <div class="slidecontainer">
-        <div class="slider-label left-label">1973</div>
-        <div class="slider-label middle-label">1998</div>
-        <div class="slider-label right-label">2022</div>
-        <input type="range" min="0" max="49" value="20" class="slider" id="myRange">
-        <output name="result" id="year" for="myRange">1933</output>
-    </div>
-
-
-</div>
-
-
-
-<div id="page2" class="page">
-    <p class="title_ms2">Coffee production and consumption metrics</p>
-    <div id='container1' class='container'>
-        <svg id='canvas1' class='canvas'>
-
-        </svg>
-        <div id='rightSide1' class='rightSide'>
-            <div id='tooltip1' class='tooltip'>
-
+                    </div>
+                    <svg id='legend1' class='legend'>
+                        <g>
+                            <rect x="10" y="0" width="40" height="40" fill="tomato"></rect>
+                            <text x="60" y="20" fill="white">Less than 15%</text>
+                        </g>
+                        <g>
+                            <rect x="10" y="40" width="40" height="40" fill="orange"></rect>
+                            <text x="60" y="60" fill="white">15% than 30%</text>
+                        </g>
+                        <g>
+                            <rect x="10" y="80" width="40" height="40" fill="lightgreen"></rect>
+                            <text x="60" y="100" fill="white">30% to 45%</text>
+                        </g>
+                        <g>
+                            <rect x="10" y="120" width="40" height="40" fill="limegreen"></rect>
+                            <text x="60" y="140" fill="white">More than 45%</text>
+                        </g>
+                    </svg>
+                    <div id='description1' class='description'>write text. Source: <a href='todo link'>todo</a></div>
+                </div>
             </div>
-            <svg id='legend1' class='legend'>
-                <g>
-                    <rect x="10" y="0" width="40" height="40" fill="tomato"></rect>
-                    <text x="60" y="20" fill="white">Less than 15%</text>
-                </g>
-                <g>
-                    <rect x="10" y="40" width="40" height="40" fill="orange"></rect>
-                    <text x="60" y="60" fill="white">15% than 30%</text>
-                </g>
-                <g>
-                    <rect x="10" y="80" width="40" height="40" fill="lightgreen"></rect>
-                    <text x="60" y="100" fill="white">30% to 45%</text>
-                </g>
-                <g>
-                    <rect x="10" y="120" width="40" height="40" fill="limegreen"></rect>
-                    <text x="60" y="140" fill="white">More than 45%</text>
-                </g>
-            </svg>
-            <div id='description1' class='description'>write text. Source: <a href='todo link'>todo</a></div>
         </div>
     </div>
-    <script defer src='https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/js/map_producers.js'></script>
-</div>
 
+    <div id="flow_page" class="page">
+        <p>Flow</p>
+    </div>
 
+    <div id="comparison_page" class="page">
+        <p>Comparison</p>
+    </div>
 
-
-
-<div id="page3" class="page">
-    <p class="title_ms3">Coffee production and consumption flow</p>
-    <div id='container2' class='container'>
-        <svg id='canvas2' class='canvas'>
-
-        </svg>
-        <div id='rightSide2' class='rightSide'>
-            <div id='tooltip2' class='tooltip'>
-
-            </div>
-            <svg id='legend2' class='legend'>
-                <g>
-                    <rect x="10" y="0" width="40" height="40" fill="tomato"></rect>
-                    <text x="60" y="20" fill="white">Less than 15%</text>
-                </g>
-                <g>
-                    <rect x="10" y="40" width="40" height="40" fill="orange"></rect>
-                    <text x="60" y="60" fill="white">15% than 30%</text>
-                </g>
-                <g>
-                    <rect x="10" y="80" width="40" height="40" fill="lightgreen"></rect>
-                    <text x="60" y="100" fill="white">30% to 45%</text>
-                </g>
-                <g>
-                    <rect x="10" y="120" width="40" height="40" fill="limegreen"></rect>
-                    <text x="60" y="140" fill="white">More than 45%</text>
-                </g>
-            </svg>
-            <div id='description2' class='description'>write text. Source: <a href='todo link'>todo</a></div>
+    <div id="taste_page" class="page">
+        <div id="taste_container">
+            <select title=Variety id="dataset-selector" class="styled-select"></select>
+            <canvas id="radar-chart"></canvas>
         </div>
     </div>
-    <script defer src='https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/js/map_flow_producers.js'></script>
+
+    <div id="conclusion_page" class="page">
+        <p>Conclusion</p>
+    </div>
 </div>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-<div id="page4" class="page">
-
-        <div class="half arabica">
-            <h1 class="title">Arabica</h1>
-            <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/arabica_hd.png" class="coffee-image" alt="abc">
-            <div class="progress-wrapper first-progress-wrapper">
-                <div class="progress-label">
-                    <i class="fas fa-flask"></i> aroma
-                </div>
-                <div class="progress-bar-wrapper">
-                    <progress class="progress-bar" id="aroma_arabica" max="100" value="50"></progress>
-                </div>
-            </div>
-            <div class="progress-wrapper middle-progress-wrapper">
-                <div class="progress-label">
-                    <i class="fas fa-cookie-bite"></i> after-taste
-                </div>
-                <div class="progress-bar-wrapper">
-                    <progress class="progress-bar" id="taste_arabica" max="100" value="50"></progress>
-                </div>
-            </div>
-
-            <div class="progress-wrapper middle-progress-wrapper">
-                <div class="progress-label">
-                    <i class="fas fa-lemon"></i> acidity
-                </div>
-                <div class="progress-bar-wrapper">
-                    <progress class="progress-bar" id="acidity_arabica" max="100" value="50"></progress>
-                </div>
-            </div>
-
-            <div class="progress-wrapper middle-progress-wrapper">
-                <div class="progress-label">
-                    <i class="fas fa-weight"></i> body
-                </div>
-                <div class="progress-bar-wrapper">
-                    <progress class="progress-bar" id="body_arabica" max="100" value="50"></progress>
-                </div>
-            </div>
-
-            <div class="progress-wrapper middle-progress-wrapper">
-                <div class="progress-label">
-                    <i class="fas fa-balance-scale"></i> balance
-                </div>
-                <div class="progress-bar-wrapper">
-                    <progress class="progress-bar" id="balance_arabica" max="100" value="50"></progress>
-                </div>
-            </div>
-
-            <div class="progress-wrapper middle-progress-wrapper">
-                <div class="progress-label">
-                    <i class="fas fa-candy-cane"></i> sweetness
-                </div>
-                <div class="progress-bar-wrapper">
-                    <progress class="progress-bar" id="sweetness_arabica" max="100" value="50"></progress>
-                </div>
-            </div>
-            <div class="image-wrapper">
-                <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/altitude_arabica.png" alt="Sweetness Image">
-                <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/temperature_arabica.png" alt="Sweetness Image">
-                <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/caffeine_arabica.png" alt="Sweetness Image">
-            </div>
-
-        </div>
-
-        <div class="half robusta">
-            <h1 class="title">Robusta</h1>
-            <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/robusta_hd.png" class="coffee-image" alt="rbs">
-            <div class="progress-wrapper first-progress-wrapper">
-                <div class="progress-label">
-                    <i class="fas fa-flask"></i> aroma
-                </div>
-                <div class="progress-bar-wrapper">
-                    <progress class="progress-bar" id="aroma_robusta" max="100" value="50"></progress>
-                </div>
-            </div>
-            <div class="progress-wrapper middle-progress-wrapper">
-                <div class="progress-label">
-                    <i class="fas fa-cookie-bite"></i> after-taste
-                </div>
-                <div class="progress-bar-wrapper">
-                    <progress class="progress-bar" id="taste_robusta" max="100" value="50"></progress>
-                </div>
-            </div>
-
-            <div class="progress-wrapper middle-progress-wrapper">
-                <div class="progress-label">
-                    <i class="fas fa-lemon"></i> acidity
-                </div>
-                <div class="progress-bar-wrapper">
-                    <progress class="progress-bar" id="acidity_robusta" max="100" value="50"></progress>
-                </div>
-            </div>
-
-            <div class="progress-wrapper middle-progress-wrapper">
-                <div class="progress-label">
-                    <i class="fas fa-weight"></i> body
-                </div>
-                <div class="progress-bar-wrapper">
-                    <progress class="progress-bar" id="body_robusta" max="100" value="50"></progress>
-                </div>
-            </div>
-
-            <div class="progress-wrapper middle-progress-wrapper">
-                <div class="progress-label">
-                    <i class="fas fa-balance-scale"></i> balance
-                </div>
-                <div class="progress-bar-wrapper">
-                    <progress class="progress-bar" id="balance_robusta" max="100" value="50"></progress>
-                </div>
-            </div>
-
-            <div class="progress-wrapper middle-progress-wrapper">
-                <div class="progress-label">
-                    <i class="fas fa-candy-cane"></i> sweetness
-                </div>
-                <div class="progress-bar-wrapper">
-                    <progress class="progress-bar" id="sweetness_robusta" max="100" value="50"></progress>
-                </div>
-            </div>
-            <div class="image-wrapper">
-                <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/altitude_robusta.png" alt="Sweetness Image">
-                <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/temperature_robusta.png" alt="Sweetness Image">
-                <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/caffeine_robusta.png" alt="Sweetness Image">
-            </div>
-
-        </div>
-</div>
- <div id="page5" class="page">
-     <div id="content5">
-       <select id="dataset-selector"></select>
-       <canvas id="radar-chart"></canvas>
-       <script src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/js/radar.js"></script>
-     </div>
-  </div>
-
-<div id="page6" class="page">
-    <p>Conclusion and references</p>
-</div>
-
-
 </body>
+
+<script src="js/comparison.js"></script>
+<script src="js/map_flow_producers.js"></script>
+<script src="js/map.js"></script>
+<script src="js/price.js"></script>
+<script src="js/radar.js"></script>
 </html>
 
