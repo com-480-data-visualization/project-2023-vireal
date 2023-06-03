@@ -296,6 +296,7 @@ nav {
     animation: steaming 2s infinite;
 }
 
+
 @keyframes steaming {
     0%, 100% {
         opacity: 0;
