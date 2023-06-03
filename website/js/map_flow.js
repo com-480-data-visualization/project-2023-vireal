@@ -10,9 +10,9 @@ let importFlowData
 
 let tooltip = d3.select('#map_tooltip2');
 let svg = d3.select("#map_canvas2");
-let rect = svg.node().getBoundingClientRect();
-let width = rect.width;
-let height = rect.height;
+const element = document.getElementById("map_canvas2");
+const height = element.clientHeight;
+const width = element.clientWidth;
 
 let camelColor = #C19A6B
 let treetopColorScale = d3.scaleLinear()

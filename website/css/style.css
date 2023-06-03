@@ -502,7 +502,7 @@ nav {
 }
 
 .map_text_container {
-    flex: 2;
+    flex: 1;
     margin-right: 1vw;
     min-width: 15vw;
     display: flex;
@@ -514,7 +514,7 @@ nav {
 }
 
 .legend_container {
-    flex: 2;
+    flex: 1;
     margin-left: 1vw;
     min-width: 15vw;
     display: flex;
