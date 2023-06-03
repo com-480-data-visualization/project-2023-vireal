@@ -146,3 +146,36 @@ async function loadData() {
 }
 
 loadData();
+
+
+
+function createLegend(colorsArray, label, id) {
+    const legendMap = document.createElement('div');
+    legendMap.id = id;
+    legendMap.className = 'legend_map';
+
+    colorsArray.slice().reverse().forEach((color, index) => {
+        const colorElement = document.createElement('div');
+        colorElement.style.backgroundColor = color;
+        colorElement.style.width = '20px';
+        colorElement.style.height = '20px';
+        colorElement.style.display = 'inline-block';
+        colorElement.style.marginRight = '5px';
+
+        const labelElement = document.createElement('span');
+        labelElement.textContent = `Top ${index + 1}0% ${label} `;
+
+        const item = document.createElement('div');
+        item.appendChild(colorElement);
+        item.appendChild(labelElement);
+
+        legendMap.appendChild(item);
+    });
+
+    return legendMap;
+}
+
+const legendContainer = document.getElementById('legend_container');
+legendContainer.appendChild(createLegend(camelColors, 'producers', 'legend_map1'));
+legendContainer.appendChild(createLegend(treetopColors, 'consumers', 'legend_map2'));
+
