@@ -834,7 +834,17 @@ nav {
     max-width: 35vw;
     position: absolute;
     bottom: 20vh;
-    left: 60vw;
+    right: 5vw;
+}
+
+#variety_name {
+    position: absolute;
+    bottom: 5vh;
+    right: 5vw;
+    text-align: right;
+    max-width: 30vw;
+    font-size: 1.5vw;
+    font-family: "Josefin Sans", serif;
 }
 
 .taste_paragraph {
@@ -865,15 +875,6 @@ select.styled-select {
 select.styled-select option {
     background-color: #c2a374;
     color: #fff;
-}
-
-#variety_name {
-    position: absolute;
-    top: 7%;
-    text-align: left;
-    text-anchor: start;
-    font-size: 2em;
-    font-family: "Josefin Sans", serif;
 }
 
 /*
