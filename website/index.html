@@ -10,9 +10,73 @@
 </head>
 <body>
 <div id="main-scroll-container" class="vertical-scroll-container">
-    <div id="introduction_page" class="page">
-        <p>Introduction</p>
+    <!-- Intro -->
+    <div id="introduction_page">
+        <section class="hero">
+            <header>
+                <nav>
+                    <div class="logo">
+                        <span class="dot"></span>
+                        ViReal <br />
+                        <span class="dot"></span>
+                    </div>
+                    <input type="checkbox" id="check" />
+                    <label for="check" class="menu">
+                        <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="30"
+                                height="30"
+                                fill="currentColor"
+                                class="bi bi-list"
+                                viewBox="0 0 16 16"
+                        >
+                            <path
+                                    fill-rule="evenodd"
+                                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                            />
+                        </svg>
+                    </label>
+                    <div class="nav-links">
+                        <a href="#introduction_page" class="active">Introduction</a>
+                        <a href="#price_page">Price</a>
+                        <a href="#map_page">Export/Import</a>
+                        <a href="#comparison_page">Comparison</a>
+                        <a href="#conclusion_page">Conclusion</a>
+                    </div>
+                </nav>
+            </header>
+            <div class="intro">
+                <div>
+                    <h1>Coffee</h1>
+                    <h2>A Never Ending Story</h2>
+                </div>
+            </div>
+
+            <div class="scroll">
+                <a href="#brands">
+                    <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="currentColor"
+                            class="bi bi-arrow-down"
+                            viewBox="0 0 16 16"
+                    >
+                        <path
+                                fill-rule="evenodd"
+                                d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+                        />
+                    </svg>
+                    <span
+                    >Scroll Down to <br />
+            Learn More</span
+                    >
+                </a>
+            </div>
+        </section>
     </div>
+
+    <!-- Price -->
     <div id="price_page" class="page">
         <div class="cup" id="cup">
             <span class="steam"></span>
@@ -20,9 +84,11 @@
             <span class="steam"></span>
             <div class="cup-handle"></div>
         </div>
+        <img class="beans" src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/coffee-beans-2.png">
+
         <div class="slider_text">
             <img src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/money.png"  class="dollar_image" alt="dollar image" width="90" height="90">
-            <div class="dollar_title"> gives you approximatly this amount of coffee in: </div>
+            <div class="dollar_title"> gives you approximately this amount of coffee in: </div>
         </div>
         <div class="slide_container">
             <div class="slider-label left-label">1973</div>
@@ -33,6 +99,7 @@
         </div>
     </div>
 
+    <!-- Map -->
     <div id="map_page" class="page">
 
         <p class="title_ms2">Coffee production and consumption metrics</p>
@@ -70,10 +137,12 @@
         </div>
     </div>
 
+    <!-- Flow -->
     <div id="flow_page" class="page">
         <p>Flow</p>
     </div>
 
+    <!-- Comparison -->
     <div id="comparison_page" class="page">
         <div class="half">
             <h1 class="title">Arabica</h1>
@@ -137,8 +206,9 @@
             </div>
         </div>
 
+        <!-- Separator -->
         <div class="h-100">
-            <img class="position-absolute w-100 h-100" src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/about.png" style="object-fit: cover;">
+            <img class="h-100" src="https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/about.png" style="object-fit: cover;">
         </div>
 
         <div class="half">
@@ -205,6 +275,7 @@
 
     </div>
 
+    <!-- Taste -->
     <div id="taste_page" class="page">
         <div id="taste_container">
             <select title=Variety id="dataset-selector" class="styled-select"></select>
@@ -212,6 +283,7 @@
         </div>
     </div>
 
+    <!-- Conclusion -->
     <div id="conclusion_page" class="page">
         <p>Conclusion</p>
     </div>
