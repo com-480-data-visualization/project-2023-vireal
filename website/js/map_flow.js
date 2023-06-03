@@ -1,59 +1,25 @@
 let countryURL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json"
 let importJSON = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/map_data/map_yearly_imports.json"
 let exportJSON = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/map_data/map_yearly_exports.json"
-let importDecilesJSON = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/map_data/map_deciles_imports.json"
-let exportDecilesJSON = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/map_data/map_deciles_exports.json"
+let importFlowJSON = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/map_data/export_flow_data.json"
 
 let countryData
 let importData
 let exportData
-let importDecilesData
-let exportDecilesData
+let importFlowData
 
-let tooltip = d3.select('#map_tooltip1')
-let svg = d3.select("#map_canvas1");
-const element = document.getElementById("map_canvas1");
-const height = element.clientHeight;
-const width = element.clientWidth;
+let tooltip = d3.select('#map_tooltip2');
+let svg = d3.select("#map_canvas2");
+let rect = svg.node().getBoundingClientRect();
+let width = rect.width;
+let height = rect.height;
 
-const thresholds = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0];
-
-let camelColorScale = d3.scaleLinear()
-    .domain([1, 10])
-    .range(["#f1c9ae", "#7e3909"]);
-let camelColors = Array.from({length: 10}, (_, i) => camelColorScale(i + 1));
-const camelColorGenerator = d3.scaleThreshold()
-    .domain(thresholds)
-    .range(camelColors);
-
+let camelColor = #C19A6B
 let treetopColorScale = d3.scaleLinear()
     .domain([1, 10])
     .range(["#b3d09c", "#167e3b"]);
 let treetopColors = Array.from({length: 10}, (_, i) => treetopColorScale(i + 1));
-const treetopColorGenerator = d3.scaleThreshold()
-    .domain(thresholds)
-    .range(treetopColors);
 
-
-
-function findDecile(data, year, value) {
-    // First, sort the data for the specified year in ascending order
-    const sortedData = data.sort((a, b) => a[year] - b[year]);
-
-    // Then, find the interval where your value fits in
-    for (let i = 0; i < sortedData.length - 1; i++) {
-        if (sortedData[i][year] <= value && value < sortedData[i + 1][year]) {
-            return sortedData[i].decile;
-        }
-    }
-
-    // If the value is larger than the largest value in the data, return the decile of the last entry
-    if (value >= sortedData[sortedData.length - 1][year]) {
-        return sortedData[sortedData.length - 1].decile;
-    }
-
-    return 0.0;
-}
 
 function getCountryNameAndMetrics(countryDataItem) {
     let name = countryDataItem['properties']['name']
@@ -81,11 +47,10 @@ function getCountryNameAndMetrics(countryDataItem) {
 }
 
 
-function drawMap() {
-    console.log(width)
-    console.log(height)
+function drawFlowMap() {
 
     svg.selectAll('path').remove();
+    console.log(camelColor)
 
     let projection = d3.geoRobinson().fitSize([width, height], countryData)
     let path = d3.geoPath().projection(projection)
@@ -114,14 +79,7 @@ function drawMap() {
             const [name, importQuantity, exportQuantity] = getCountryNameAndMetrics(countryDataItem)
             tooltip.transition()
                 .style('visibility', 'visible');
-            if (importQuantity > 0) {
-                tooltip.html('Country: <span class="map_country_name">' + name + '</span>. Import amount: ' + Math.trunc(importQuantity).toLocaleString() + ' tonnes');
-            } else if (exportQuantity > 0) {
-                tooltip.html('Country: <span class="map_country_name">' + name + '</span>. Export amount: ' + Math.trunc(exportQuantity).toLocaleString() + ' tonnes');
-            } else {
-                tooltip.html('Country: <span class="map_country_name">' + name);
-            }
-
+            tooltip.html('Country: <span class="map_country_name">' + name + '</span>. Import amount: ' + Math.trunc(importQuantity).toLocaleString() + ' tonnes. Export amount: ' + Math.trunc(exportQuantity).toLocaleString() + ' tonnes');
         })
         .on('mouseout', (countryDataItem) => {
             tooltip.transition()
@@ -129,7 +87,7 @@ function drawMap() {
         })
 }
 
-async function loadData() {
+async function loadFlowData() {
     try {
         let countryResponse = await d3.json(countryURL);
         countryData = topojson.feature(countryResponse, countryResponse.objects.countries);
@@ -141,20 +99,17 @@ async function loadData() {
         exportData = await d3.json(exportJSON);
         console.log(exportData);
 
-        importDecilesData = await d3.json(importDecilesJSON);
-        console.log(importDecilesData);
+        importFlowData = await d3.json(importFlowJSON);
+        console.log(importFlowData);
 
-        exportDecilesData = await d3.json(exportDecilesJSON);
-        console.log(exportDecilesData);
-
-        drawMap();
+        console.log("HEY")
+        drawFlowMap();
     } catch (error) {
         console.log(error);
     }
 }
 
-loadData();
-
+loadFlowData();
 
 
 function createLegend(colorsArray, label, id) {
@@ -183,7 +138,5 @@ function createLegend(colorsArray, label, id) {
     return legendMap;
 }
 
-const legendContainer = document.getElementById('legend_container');
-legendContainer.appendChild(createLegend(camelColors, 'consumers', 'legend_map1'));
+const legendContainer = document.getElementById('legend_container2');
 legendContainer.appendChild(createLegend(treetopColors, 'producers', 'legend_map2'));
-
