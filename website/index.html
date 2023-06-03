@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
 </head>
 <body>
 <div id="main-scroll-container" class="vertical-scroll-container">
@@ -18,11 +20,13 @@
 
     <div id="map_page" class="page">
 
-        <p class="title_ms2">Coffee production and consumption metrics</p>
+        <div id="map_tile_container" class="title_container">
+            <div class="title_text">Coffee production and consumption metrics</div>
+        </div>
 
-        <div id="map1_main_container" class="map_main_container">
-            <div id='map1_container' class='map_container'>
-                <svg id='map1_canvas' class='map_canvas'>
+        <div id="map_main_container1" class="map_main_container">
+            <div id='map_container1' class='map_container'>
+                <svg id='map_canvas1' class='map_canvas'>
 
                 </svg>
                 <div id='map_map_right_side1' class='map_right_side'>
@@ -45,7 +49,7 @@
                             <text x="60" y="140" fill="white">More than 45%</text>
                         </g>
                     </svg>
-                    <div id='description1' class='description'>write text. Source: <a href='todo link'>todo</a></div>
+                    <div id='map_description1' class='map_description'>write text. Source: <a href='todo link'>todo</a></div>
                 </div>
             </div>
         </div>
@@ -75,6 +79,7 @@
 <script src="js/comparison.js"></script>
 <script src="js/map_flow_producers.js"></script>
 <script src="js/map.js"></script>
+<script src="js/map_slider.js"></script>
 <script src="js/price.js"></script>
 <script src="js/radar.js"></script>
 </html>
