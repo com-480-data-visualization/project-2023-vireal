@@ -12,9 +12,15 @@ let exportDecilesData
 
 let tooltip = d3.select('#map_tooltip1')
 let svg = d3.select("#map_canvas1");
-const element = document.getElementById("map_canvas1");
-const height = element.clientHeight;
-const width = element.clientWidth;
+let element = document.getElementById("map_canvas1");
+let height = element.clientHeight;
+let width = element.clientWidth;
+window.addEventListener("resize", function() {
+    element = document.getElementById("map_canvas1");
+    height = element.clientHeight;
+    width = element.clientWidth;
+    drawMap();
+});
 
 const thresholds = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0];
 
