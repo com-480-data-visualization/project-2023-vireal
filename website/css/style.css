@@ -889,6 +889,47 @@ select.styled-select option {
         }
 
 
+/*
+ *
+ *
+ *
+ * Conclusion
+ *
+ *
+ *
+ */
+
+
+.shop-box .card {
+    width: 50vw;
+    position: absolute;
+    bottom: 20vh;
+}
+
+.card-image {
+    margin: 3rem;
+}
+
+.conclusion_text{
+    position: relative;
+    top: 0vh;
+    text-align: left;
+    font-size: 20px;
+    color: #c2a374;
+    font-family: "Josefin Sans", serif;
+}
+.cards-container {
+    margin-top: 25vh; /* Adjust the margin value as needed */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
 
 
 
