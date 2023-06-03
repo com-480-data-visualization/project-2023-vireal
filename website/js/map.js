@@ -78,6 +78,10 @@ function getCountryNameAndMetrics(countryDataItem) {
         exportQuantity = exportCountry[window.i_year_map]
     }
 
+    if (name === "United States of America") {
+        name = "USA"
+    }
+
     return [name, importQuantity, exportQuantity]
 }
 
@@ -113,7 +117,7 @@ function drawMap() {
             const [name, importQuantity, exportQuantity] = getCountryNameAndMetrics(countryDataItem)
             tooltip.transition()
                 .style('visibility', 'visible');
-            tooltip.html('Country: <span class="map_country_name">' + name + '</span>, Import amount: ' + Math.trunc(importQuantity) + ' tonnes, Export amount: ' + Math.trunc(exportQuantity) + ' tonnes');
+            tooltip.html('Country: <span class="map_country_name">' + name + '</span>. Import amount: ' + Math.trunc(importQuantity).toLocaleString() + ' tonnes. Export amount: ' + Math.trunc(exportQuantity).toLocaleString() + ' tonnes');
         })
         .on('mouseout', (countryDataItem) => {
             tooltip.transition()
@@ -176,6 +180,6 @@ function createLegend(colorsArray, label, id) {
 }
 
 const legendContainer = document.getElementById('legend_container');
-legendContainer.appendChild(createLegend(camelColors, 'producers', 'legend_map1'));
-legendContainer.appendChild(createLegend(treetopColors, 'consumers', 'legend_map2'));
+legendContainer.appendChild(createLegend(camelColors, 'consumers', 'legend_map1'));
+legendContainer.appendChild(createLegend(treetopColors, 'producers', 'legend_map2'));
 
