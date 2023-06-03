@@ -1,70 +1,35 @@
-let countryURL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json"
-let importJSON = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/map_data/map_yearly_imports.json"
-let exportJSON = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/map_data/map_yearly_exports.json"
 let importFlowJSON = "https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/data/map_data/export_flow_data.json"
-
-let countryData
-let importData
-let exportData
 let importFlowData
 
-let tooltip = d3.select('#map_tooltip2');
-let svg = d3.select("#map_canvas2");
-let rect = svg.node().getBoundingClientRect();
-let width = rect.width;
-let height = rect.height;
+let tooltip2 = d3.select('#map_tooltip2');
+let svg2 = d3.select("#map_canvas2");
+let element2 = document.getElementById("map_canvas2");
+let height2 = element.clientHeight;
+let width2 = element.clientWidth;
+window.addEventListener("resize", function() {
+    height2 = element2.clientHeight;
+    width2 = element2.clientWidth;
+    drawFlowMap();
+});
 
 let camelColor = #C19A6B
-let treetopColorScale = d3.scaleLinear()
-    .domain([1, 10])
-    .range(["#b3d09c", "#167e3b"]);
-let treetopColors = Array.from({length: 10}, (_, i) => treetopColorScale(i + 1));
-
-
-function getCountryNameAndMetrics(countryDataItem) {
-    let name = countryDataItem['properties']['name']
-    let importCountry = importData.find((importCountryItem) => {
-        return importCountryItem['country_name'] === name
-    })
-    let exportCountry = exportData.find((exportCountryItem) => {
-        return exportCountryItem['country_name'] === name
-    })
-
-    let importQuantity = 0
-    let exportQuantity = 0
-    if (importCountry) {
-        importQuantity = importCountry[window.i_year_map]
-    }
-    if (exportCountry) {
-        exportQuantity = exportCountry[window.i_year_map]
-    }
-
-    if (name === "United States of America") {
-        name = "USA"
-    }
-
-    return [name, importQuantity, exportQuantity]
-}
-
 
 function drawFlowMap() {
 
-    svg.selectAll('path').remove();
-    console.log(camelColor)
-
-    let projection = d3.geoRobinson().fitSize([width, height], countryData)
+    svg2.selectAll('path').remove();
+    let projection = d3.geoRobinson().fitSize([width2, height2], countryData)
     let path = d3.geoPath().projection(projection)
 
-    svg.selectAll('path')
+    svg2.selectAll('path')
         .data(countryData.features)
         .enter()
         .append('path')
         .attr('d', path)
         .attr('class', 'country')
         .attr('fill', (countryDataItem) => {
-            const [name, importQuantity, exportQuantity] = getCountryNameAndMetrics(countryDataItem)
+            const [name, isImport, isExport] = getCountryNameAndData(countryDataItem)
 
-            if (importQuantity === 0 && exportQuantity === 0) {
+            if (isImport === 0 && isExport === 0) {
                 return `rgba(${255}, ${255}, ${255}, ${1})`
             } else if (exportQuantity > 0) {
                 return treetopColorGenerator(findDecile(exportDecilesData, window.i_year_map, exportQuantity))
@@ -76,7 +41,7 @@ function drawFlowMap() {
             return countryDataItem['properties']['name']
         })
         .on('mouseover', function (event, countryDataItem) {
-            const [name, importQuantity, exportQuantity] = getCountryNameAndMetrics(countryDataItem)
+            const [name, importQuantity, exportQuantity] = getCountryNameAndData(countryDataItem)
             tooltip.transition()
                 .style('visibility', 'visible');
             tooltip.html('Country: <span class="map_country_name">' + name + '</span>. Import amount: ' + Math.trunc(importQuantity).toLocaleString() + ' tonnes. Export amount: ' + Math.trunc(exportQuantity).toLocaleString() + ' tonnes');
@@ -87,32 +52,10 @@ function drawFlowMap() {
         })
 }
 
-async function loadFlowData() {
-    try {
-        let countryResponse = await d3.json(countryURL);
-        countryData = topojson.feature(countryResponse, countryResponse.objects.countries);
-        console.log(countryData);
-
-        importData = await d3.json(importJSON);
-        console.log(importData);
-
-        exportData = await d3.json(exportJSON);
-        console.log(exportData);
-
-        importFlowData = await d3.json(importFlowJSON);
-        console.log(importFlowData);
-
-        console.log("HEY")
-        drawFlowMap();
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-loadFlowData();
 
 
-function createLegend(colorsArray, label, id) {
+
+function createLegend(colorsArray, label, id){
     const legendMap = document.createElement('div');
     legendMap.id = id;
     legendMap.className = 'legend_map';

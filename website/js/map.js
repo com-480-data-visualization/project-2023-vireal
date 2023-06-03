@@ -16,7 +16,6 @@ let element = document.getElementById("map_canvas1");
 let height = element.clientHeight;
 let width = element.clientWidth;
 window.addEventListener("resize", function() {
-    element = document.getElementById("map_canvas1");
     height = element.clientHeight;
     width = element.clientWidth;
     drawMap();
