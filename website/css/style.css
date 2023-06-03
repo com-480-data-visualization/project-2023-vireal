@@ -331,7 +331,7 @@ nav {
 
 .timeline-content {
     padding: 10px;
-    background: linear-gradient(45deg,  #452E20,#573F2E , #8B0000);;
+    background: linear-gradient(45deg, rgba(69, 46, 32, 0.7), rgba(87, 63, 46, 0.7), rgba(139, 0, 0, 0.7));
     -webkit-box-shadow: 3px 3px 6px #1a1a1a, -3px -3px 6px #242424;
     box-shadow: 3px 3px 6px #1a1a1a, -3px -3px 6px #242424;
     border-radius: 5px;
@@ -848,7 +848,7 @@ nav {
 }
 
 .taste_paragraph {
-    color: #c2a374;
+    color: var(--black);
     text-align: justify;
     font-size: calc(1vw + 0.5vh);;
     font-family: "Josefin Sans", serif;
@@ -887,7 +887,9 @@ select.styled-select option {
  *
  */
 
-
+.card-body{
+    text-align: center;
+}
 .shop-box .card {
     width: 50vw;
     position: absolute;
