@@ -108,7 +108,7 @@ nav {
 
 /* Hero */
 .hero {
-    background-image: url("../imgs/intro_image.jpg");
+    background-image: url("https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/intro_image.jpg");
     background-size: cover;
     padding: 5rem 10% 0rem 10%;
     height: 100vh;
