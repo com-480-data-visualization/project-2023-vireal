@@ -43,14 +43,12 @@ function findDecile(data, year, value) {
     // Then, find the interval where your value fits in
     for (let i = 0; i < sortedData.length - 1; i++) {
         if (sortedData[i][year] <= value && value < sortedData[i + 1][year]) {
-            console.log(sortedData[i].decile)
             return sortedData[i].decile;
         }
     }
 
     // If the value is larger than the largest value in the data, return the decile of the last entry
     if (value >= sortedData[sortedData.length - 1][year]) {
-        console.log(sortedData[sortedData.length - 1].decile)
         return sortedData[sortedData.length - 1].decile;
     }
 
@@ -60,6 +58,11 @@ function findDecile(data, year, value) {
 function getCountryNameAndMetrics(countryDataItem) {
     let name = countryDataItem['properties']['name']
     let importCountry = importData.find((importCountryItem) => {
+        if(importCountryItem['country_name'] === name) {
+            if(name === "Ukraine") {
+                console.log("Ukraine")
+            }
+        }
         return importCountryItem['country_name'] === name
     })
     let exportCountry = exportData.find((exportCountryItem) => {
@@ -79,7 +82,9 @@ function getCountryNameAndMetrics(countryDataItem) {
 }
 
 
-let drawMap = (i_year_map) => {
+function drawMap() {
+
+    svg.selectAll('path').remove();
 
     let projection = d3.geoRobinson().fitSize([width, height], countryData)
     let path = d3.geoPath().projection(projection)

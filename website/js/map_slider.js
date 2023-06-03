@@ -14,7 +14,7 @@ mapSliderContainer.appendChild(mapSlider);  // Append the slider to the new div
 
 // Create output
 let mapOutput = document.createElement('p');
-mapOutput.id = 'demo';
+mapOutput.id = 'mapDemo';
 mapOutput.innerHTML = `Year: ${mapSlider.value}`;
 mapSliderContainer.appendChild(mapOutput);  // Append the output to the new div
 
@@ -22,7 +22,8 @@ window.i_year_map = 1990
 // Event listener
 mapSlider.addEventListener('input', function() {
     mapOutput.innerHTML = `Year: ${this.value}`;
-    i_year_map = this.value;
+    window.i_year_map = this.value;
+    drawMap()
 });
 
 // Get the mainContainer div and insert the new sliderContainer div as its first child
