@@ -160,6 +160,45 @@ nav {
  *
  *
  *
+ * Page heritage
+ *
+ *
+ *
+ */
+
+#heritage_page {
+  position: relative;
+  background-image: url("https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/harvest.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.overlay_heritage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: skew(10deg) translateX(-55%); /* Adjust the skew angle as needed */
+  transform-origin: top left;
+  background-color: rgba(255, 0, 0, 0); /* Adjust the color and opacity as needed */
+
+  transition: background-color 1s ease-in-out;
+  z-index: 1;
+  pointer-events: none;
+  clip-path: polygon(0 0, 200% 0, 100% 100%, 0 100%); /* Adjusted clip-path to cut the shape diagonally */
+}
+
+#heritage_page:hover .overlay_heritage {
+  background-color: rgb(255,250,240,0.9); /* Change to the desired color on hover */
+}
+
+
+/*
+ *
+ *
+ *
  * Page Story
  *
  *
@@ -256,6 +295,7 @@ nav {
     width: 8px;
     animation: steaming 2s infinite;
 }
+
 
 @keyframes steaming {
     0%, 100% {
@@ -612,10 +652,10 @@ nav {
 
 #left_taste_container {
     flex-direction: column;
-    position: relative;
+    position: absolute;
     display: flex;
     height: 65vh;
-    right: 20vh;
+    right: 95vh;
 }
 
 .taste_title {
@@ -628,7 +668,7 @@ nav {
     max-width: 700px;
     position: relative;
     top: 9vh;
-    right: -4vh;
+    right: -0vh;
 }
 
 .taste_paragraph {
@@ -639,21 +679,42 @@ nav {
 }
 
 #taste_page {
-    background:#f5e4c9 linear-gradient(68deg,floralwhite 0%,floralwhite 50%, transparent 50%);
+    background: #f5e4c9 linear-gradient(68deg, floralwhite 0%, floralwhite 50%, transparent 50%);
 }
 
 #taste_page #radar-chart {
-    width: 700px;
-    height: 700px;
+    width: 100%; /* Set the width to 100% of the parent container */
+    height: 600px; /* Adjust the height as needed */
 
+    /* Optional: add some padding or margin to the radar chart */
+    padding: 10px;
+    margin: 0 auto; /* Center the radar chart horizontally */
 }
+
 #taste_page #taste_container {
-    position: relative;
+    position: absolute;
     height: 65vh;
-    left: 12vh;
+    left: 97vh;
     min-height: 600px; /* Adjust the minimum height as needed */
+
+    /* Optional: Add some padding or margin to the container */
+    padding: 10px;
+    margin: 0 auto; /* Center the container horizontally */
 }
 
+/* Media Query for screens smaller than 700px */
+@media (max-width: 700px) {
+    #taste_page #radar-chart {
+        width: 100%; /* Set the width to 100% of the parent container */
+        height: 300px; /* Adjust the height as needed */
+    }
+
+    #taste_page #taste_container {
+        width: 100%; /* Set the width to 100% of the parent container */
+        height: auto; /* Let the height adjust automatically based on the content */
+        left: 0; /* Reset the left position */
+    }
+}
 select.styled-select {
             padding: 5px;
             background-color: #dbbe91;
