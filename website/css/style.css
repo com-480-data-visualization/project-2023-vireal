@@ -475,6 +475,91 @@ nav {
  *
  *
  *
+ * Page map
+ *
+ *
+ *
+ */
+#page_map .country:hover {
+    fill: black
+}
+
+#page_map g {
+    color: rgb(229.5, 225, 216);
+}
+
+.map_canvas {
+    min-height: 600px;
+    min-width: 950px;
+    background-color: rgb(229.5, 225, 216);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.map_tooltip {
+    visibility: hidden;
+    height: auto;
+    width: auto;
+    margin-top: 2px;
+    color: rgb(229.5, 225, 216);
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.map_legend {
+    color: rgb(229.5, 225, 216);
+    font-size: 18px;
+    text-align: center;
+    min-height: 150px;
+    max-width: 180px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.map_description a {
+    text-decoration: none;
+    color: rgb(229.5, 225, 216);
+    text-align: center;
+}
+
+.map_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.map_main_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.map_right_side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+}
+
+
+.title_container {
+    position: relative;
+    display: flex;
+    height: 65vh;
+    right: -5vh;
+}
+
+.title_text {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+/*
+ *
+ *
+ *
  * Page taste
  *
  *
