@@ -10,28 +10,76 @@ let exportData
 let importDecilesData
 let exportDecilesData
 
-let tooltip = d3.select('#tooltip1')
-
-let baseColorRust = [183, 65, 14]
-let baseColorCamel = [154, 123, 86]
-let baseColorTreetop = [34, 139, 34]
-let alphaStep = 0.05
-let colorArrayImport = []
-let colorArrayExport = []
-
-for (let i = 0; i < 20; i++) {
-    let currentAlpha = Math.max(1 - i * alphaStep, 0);
-    colorArrayImport.push(`rgba(${baseColorRust[0]}, ${baseColorRust[1]}, ${baseColorRust[2]}, ${currentAlpha})`)
-    colorArrayExport.push(`rgba(${baseColorTreetop[0]}, ${baseColorTreetop[1]}, ${baseColorTreetop[2]}, ${currentAlpha})`)
-}
-
-
-let svg = d3.select("#canvas1");
+let tooltip = d3.select('#map_tooltip1')
+let svg = d3.select("#map_canvas1");
 let rect = svg.node().getBoundingClientRect();
 let width = rect.width;
 let height = rect.height;
 
-let drawMap = () => {
+const thresholds = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0];
+
+let camelColorScale = d3.scaleLinear()
+    .domain([1, 10])
+    .range(["#f1c9ae", "#7e3909"]);
+let camelColors = Array.from({length: 10}, (_, i) => camelColorScale(i + 1));
+const camelColorGenerator = d3.scaleThreshold()
+    .domain(thresholds)
+    .range(camelColors);
+
+let treetopColorScale = d3.scaleLinear()
+    .domain([1, 10])
+    .range(["#b3d09c", "#167e3b"]);
+let treetopColors = Array.from({length: 10}, (_, i) => treetopColorScale(i + 1));
+const treetopColorGenerator = d3.scaleThreshold()
+    .domain(thresholds)
+    .range(treetopColors);
+
+
+
+function findDecile(data, year, value) {
+    // First, sort the data for the specified year in ascending order
+    const sortedData = data.sort((a, b) => a[year] - b[year]);
+
+    // Then, find the interval where your value fits in
+    for (let i = 0; i < sortedData.length - 1; i++) {
+        if (sortedData[i][year] <= value && value < sortedData[i + 1][year]) {
+            console.log(sortedData[i].decile)
+            return sortedData[i].decile;
+        }
+    }
+
+    // If the value is larger than the largest value in the data, return the decile of the last entry
+    if (value >= sortedData[sortedData.length - 1][year]) {
+        console.log(sortedData[sortedData.length - 1].decile)
+        return sortedData[sortedData.length - 1].decile;
+    }
+
+    return 0.0;
+}
+
+function getCountryNameAndMetrics(countryDataItem) {
+    let name = countryDataItem['properties']['name']
+    let importCountry = importData.find((importCountryItem) => {
+        return importCountryItem['country_name'] === name
+    })
+    let exportCountry = exportData.find((exportCountryItem) => {
+        return exportCountryItem['country_name'] === name
+    })
+
+    let importQuantity = 0
+    let exportQuantity = 0
+    if (importCountry) {
+        importQuantity = importCountry[window.i_year_map]
+    }
+    if (exportCountry) {
+        exportQuantity = exportCountry[window.i_year_map]
+    }
+
+    return [name, importQuantity, exportQuantity]
+}
+
+
+let drawMap = (i_year_map) => {
 
     let projection = d3.geoRobinson().fitSize([width, height], countryData)
     let path = d3.geoPath().projection(projection)
@@ -43,24 +91,14 @@ let drawMap = () => {
         .attr('d', path)
         .attr('class', 'country')
         .attr('fill', (countryDataItem) => {
-            let name = countryDataItem['properties']['name']
-            let importCountry = importData.find((importCountryItem) => {
-                return importCountryItem['country_name'] === name
-            })
-            let exportCountry = exportData.find((exportCountryItem) => {
-                return exportCountryItem['country_name'] === name
-            })
+            const [name, importQuantity, exportQuantity] = getCountryNameAndMetrics(countryDataItem)
 
-            if (importCountry) {
-                let importTopNumber = importCountry['top_number']
-                return colorArrayImport[importTopNumber - 1]
-
-            } else if (exportCountry) {
-                let exportTopNumber = exportCountry['top_number']
-                return colorArrayExport[exportTopNumber - 1]
-
-            } else {
+            if (importQuantity === 0 && exportQuantity === 0) {
                 return `rgba(${255}, ${255}, ${255}, ${1})`
+            } else if (exportQuantity > 0) {
+                return treetopColorGenerator(findDecile(exportDecilesData, window.i_year_map, exportQuantity))
+            } else {
+                return camelColorGenerator(findDecile(importDecilesData, window.i_year_map, importQuantity))
             }
         })
         .attr('country-name', (countryDataItem) => {
@@ -85,24 +123,10 @@ let drawMap = () => {
             }
         })
         .on('mouseover', function (event, countryDataItem) {
-            let name = countryDataItem['properties']['name'];
-            let importCountry = importData.find((importCountryItem) => {
-                return importCountryItem['country_name'] === name;
-            });
-            let exportCountry = exportData.find((exportCountryItem) => {
-                return exportCountryItem['country_name'] === name;
-            });
-
-            let importExportAmount = 0;
-            if (importCountry) {
-                importExportAmount = importCountry['average'];
-            } else if (exportCountry) {
-                importExportAmount = exportCountry['average'];
-            }
-
+            const [name, importQuantity, exportQuantity] = getCountryNameAndMetrics(countryDataItem)
             tooltip.transition()
                 .style('visibility', 'visible');
-            tooltip.text('Country: ' + name + ', Import/Export Amount: ' + importExportAmount);
+            tooltip.text('Country: ' + name + ', Import amount: ' + importQuantity + ', Export amount: ' + exportQuantity);
         })
         .on('mouseout', (countryDataItem) => {
             tooltip.transition()
@@ -110,36 +134,28 @@ let drawMap = () => {
         })
 }
 
-d3.json(countryURL).then(
-    (data, error) => {
-        if(error){
-            console.log(error)
-        }else{
-            countryData = topojson.feature(data, data.objects.countries)
-            console.log(countryData)
+async function loadData() {
+    try {
+        let countryResponse = await d3.json(countryURL);
+        countryData = topojson.feature(countryResponse, countryResponse.objects.countries);
+        console.log(countryData);
 
-            d3.json(importJSON).then(
-                (data, error) => {
-                    if(error){
-                        console.log(error)
-                    }else{
-                        importData = data
-                        console.log(importData)
+        importData = await d3.json(importJSON);
+        console.log(importData);
 
-                        d3.json(exportJSON).then(
-                            (data, error) => {
-                                if(error){
-                                    console.log(error)
-                                }else{
-                                    exportData = data
-                                    console.log(exportData)
-                                    drawMap()
-                                }
-                            }
-                        )
-                    }
-                }
-            )
-        }
+        exportData = await d3.json(exportJSON);
+        console.log(exportData);
+
+        importDecilesData = await d3.json(importDecilesJSON);
+        console.log(importDecilesData);
+
+        exportDecilesData = await d3.json(exportDecilesJSON);
+        console.log(exportDecilesData);
+
+        drawMap();
+    } catch (error) {
+        console.log(error);
     }
-)
+}
+
+loadData();
