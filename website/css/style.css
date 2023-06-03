@@ -572,6 +572,32 @@ nav {
  *
  */
 
+#left_taste_container {
+    flex-direction: column;
+    position: relative;
+    display: flex;
+    height: 65vh;
+    right: 20vh;
+}
+
+.taste_title {
+     color: #a88756;
+    font-size: 100px;
+    font-weight: bold;
+}
+
+#taste_para_container {
+    max-width: 700px;
+    position: relative;
+    top: 9vh;
+    right: -4vh;
+}
+.taste_paragraph {
+    color: #c2a374;
+    text-align: justify;
+    font-size: 30px;
+    font-family: "Josefin Sans", serif;
+}
 #taste_page {
     background:#f5e4c9 linear-gradient(68deg,floralwhite 0%,floralwhite 50%, transparent 50%);
 }
@@ -583,8 +609,9 @@ nav {
 }
 #taste_page #taste_container {
     position: relative;
-    height: 60vh;
-    left: 55vh;
+    height: 65vh;
+    left: 12vh;
+    min-height: 600px; /* Adjust the minimum height as needed */
 }
 
 select.styled-select {
@@ -601,6 +628,7 @@ select.styled-select option {
             background-color: #c2a374;
             color: #fff;
         }
+
 
 
 
