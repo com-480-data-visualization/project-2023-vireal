@@ -165,7 +165,34 @@ nav {
  *
  *
  */
+.section-title {
+    position: absolute;
+    padding: 115px 0 35px 0;
+    text-align: center;
+    top: 0;
+}
 
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 90px;
+    top: 0;
+    left: 50%;
+    margin-left: 1px;
+    background: #DA9F5B;
+}
+
+.text_upper{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.text_lower{
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
 
 .beans {
     width: 200px;
@@ -394,6 +421,7 @@ nav {
     font-size: 50px;
     margin-top: 80px;
     margin-left: 40px;
+    color: var(--black);
 }
 
 .first-progress-wrapper{
@@ -416,6 +444,7 @@ nav {
     font-family: 'Raleway', sans-serif;
     display: inline-block;
     min-width: 120px;
+    color: var(--black);
 }
 
 .progress-bar-wrapper {
