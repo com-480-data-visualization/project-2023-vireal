@@ -177,6 +177,10 @@ nav {
 
 .overlay_heritage {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     transform: skew(10deg) translateX(-55vw);
     transform-origin: top left;
     background-color: rgba(255, 0, 0, 0);
