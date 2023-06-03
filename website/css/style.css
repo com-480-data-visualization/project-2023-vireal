@@ -233,7 +233,6 @@ nav {
   top:  15%;
   transform: skew(-10deg);
   z-index: 3;
-  color: #8B5A2B;
   width: 30%;
   font-size: 6rem;
   font-weight: bold;
@@ -292,6 +291,12 @@ nav {
  * Timeline
  */
 
+.overlay_beans_evolution{
+    position: absolute;
+    left: 49%;
+    top: 92%;
+    width: 3%;
+}
 .design-section {
     display: flex;
     flex-direction: column;
@@ -320,7 +325,7 @@ nav {
 
 .timeline-content {
     padding: 10px;
-    background: grey;
+    background: linear-gradient(45deg,  #452E20,#573F2E , #8B0000);;
     -webkit-box-shadow: 3px 3px 6px #1a1a1a, -3px -3px 6px #242424;
     box-shadow: 3px 3px 6px #1a1a1a, -3px -3px 6px #242424;
     border-radius: 5px;
@@ -370,6 +375,14 @@ nav {
  *
  *
  */
+.price_caption{
+    position: absolute;
+    bottom: 10vh;
+    text-align: left;
+    font-size: 20px;
+    color: #c2a374;
+    font-family: "Josefin Sans", serif;
+}
 .section-title {
     position: absolute;
     padding: 115px 0 35px 0;
