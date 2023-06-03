@@ -807,31 +807,33 @@ nav {
  *
  */
 
+#parent_container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
 #left_taste_container {
     flex-direction: column;
     position: absolute;
+    left: 5vw;
+    bottom: 20vh;
+    max-width: 40vw;
     display: flex;
-    height: 65vh;
-    right: 95vh;
 }
 
-.taste_title {
-     color: #a88756;
-    font-size: 100px;
-    font-weight: bold;
-}
-
-#taste_para_container {
-    max-width: 700px;
-    position: relative;
-    top: 9vh;
-    right: -0vh;
+#taste_container {
+    min-width: 30vw;
+    max-width: 35vw;
+    position: absolute;
+    bottom: 20vh;
+    left: 60vw;
 }
 
 .taste_paragraph {
     color: #c2a374;
     text-align: justify;
-    font-size: 30px;
+    font-size: calc(1vw + 0.5vh);;
     font-family: "Josefin Sans", serif;
 }
 
@@ -840,52 +842,23 @@ nav {
 }
 
 #taste_page #radar-chart {
-    width: 100%; /* Set the width to 100% of the parent container */
-    height: 600px; /* Adjust the height as needed */
-
-    /* Optional: add some padding or margin to the radar chart */
-    padding: 10px;
-    margin: 0 auto; /* Center the radar chart horizontally */
+    align-items: center;
 }
 
-#taste_page #taste_container {
-    position: absolute;
-    height: 65vh;
-    left: 97vh;
-    min-height: 600px; /* Adjust the minimum height as needed */
-
-    /* Optional: Add some padding or margin to the container */
-    padding: 10px;
-    margin: 0 auto; /* Center the container horizontally */
-}
-
-/* Media Query for screens smaller than 700px */
-@media (max-width: 700px) {
-    #taste_page #radar-chart {
-        width: 100%; /* Set the width to 100% of the parent container */
-        height: 300px; /* Adjust the height as needed */
-    }
-
-    #taste_page #taste_container {
-        width: 100%; /* Set the width to 100% of the parent container */
-        height: auto; /* Let the height adjust automatically based on the content */
-        left: 0; /* Reset the left position */
-    }
-}
 select.styled-select {
-            padding: 5px;
-            background-color: #dbbe91;
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-        }
+    padding: 5px;
+    background-color: #dbbe91;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
 
 select.styled-select option {
-            background-color: #c2a374;
-            color: #fff;
-        }
+    background-color: #c2a374;
+    color: #fff;
+}
 
 
 /*
