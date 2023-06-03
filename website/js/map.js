@@ -109,29 +109,11 @@ function drawMap() {
         .attr('country-name', (countryDataItem) => {
             return countryDataItem['properties']['name']
         })
-        .attr('import-export-amount', (countryDataItem) => {
-            let name = countryDataItem['properties']['name']
-            let importCountry = importData.find((importCountryItem) => {
-                return importCountryItem['country_name'] === name
-            })
-            let exportCountry = importData.find((exportCountryItem) => {
-                return exportCountryItem['country_name'] === name
-            })
-
-            if (importCountry) {
-                return importCountry['average']
-
-            } else if (exportCountry) {
-                return importCountry['average']
-            } else {
-                return 0
-            }
-        })
         .on('mouseover', function (event, countryDataItem) {
             const [name, importQuantity, exportQuantity] = getCountryNameAndMetrics(countryDataItem)
             tooltip.transition()
                 .style('visibility', 'visible');
-            tooltip.text('Country: ' + name + ', Import amount: ' + importQuantity + ', Export amount: ' + exportQuantity);
+            tooltip.html('Country: <span class="map_country_name">' + name + '</span>, Import amount: ' + Math.trunc(importQuantity) + ' tonnes, Export amount: ' + Math.trunc(exportQuantity) + ' tonnes');
         })
         .on('mouseout', (countryDataItem) => {
             tooltip.transition()
