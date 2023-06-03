@@ -54,24 +54,51 @@ d3.dsv("|","https://raw.githubusercontent.com/com-480-data-visualization/project
     type: "radar",
     data: {
       labels: ['Aroma', 'Aftertaste', "Flavor", "Balance", "Sweetness", "Acidity"],
-      datasets: []
+       datasets: []
     },
+
     options: {
-      responsive: true,
-      scales: {
-        r: {
-          grid: {
-        color: ['#dbbe91']
-      },
-          min: 1,
-          max: 100,
-          ticks: {
-            stepSize: 10
-          }
-        }
+        plugins: {
+            legend: {
+        display: false // Hide the legend
       }
+    },
+      responsive: true,
+     scales: {
+  r: {
+    grid: {
+      color: '#d9bc90', // Set the color of the grid lines
+      lineWidth: 4, // Set the thickness of the grid lines
+    },
+    min: 1,
+    max: 100,
+    ticks: {
+      fontSize: 20,
+      stepSize: 10
+    },
+    pointLabels: {
+        display: true,
+          fontSize: 120,
+          fontStyle: 'bold',
+          color: ['#593a25','#593a25','#593a25','#593a25','#593a25','#593a25'] // Set different colors for each label
+        }
+  },
+}
     }
   });
+
+  chart.data.datasets[0] = {
+      label: "Select a Variety",
+      data: [0,0,0,0,0,0],
+      fill: true,
+      backgroundColor: "rgba(255, 250, 240, 0.4)",
+      borderColor: "#c2a374",
+      pointBackgroundColor: "rgba(158, 138, 106, 1)",
+      pointBorderColor: "#c2a374",
+      pointHoverBackgroundColor: "#c2a374",
+      pointHoverBorderColor: "rgba(158, 138, 106, 1)"
+    };
+      chart.update();
 
 
 // Event listener for the dataset selector
@@ -88,7 +115,7 @@ d3.dsv("|","https://raw.githubusercontent.com/com-480-data-visualization/project
       label: datarow.Variety,
       data: [datarow.Aroma, datarow.Aftertaste, datarow.Flavor, datarow.Balance, datarow.Sweetness, datarow.Acidity],
       fill: true,
-      backgroundColor: "rgba(224, 209, 186, 0.2)",
+      backgroundColor: "rgba(255, 250, 240, 0.4)",
       borderColor: "#c2a374",
       pointBackgroundColor: "rgba(158, 138, 106, 1)",
       pointBorderColor: "#c2a374",
@@ -100,3 +127,15 @@ d3.dsv("|","https://raw.githubusercontent.com/com-480-data-visualization/project
 }).catch(function(error) {
   console.log("Error loading CSV file:", error);
 });
+
+var s = document.getElementById("dataset-selector");
+var varietyTxt = document.getElementById("variety_name");
+s.addEventListener('change', function() {
+    if (s.value === "Other") {
+         varietyTxt.textContent = " Average of other varieties in the database";
+    } else {
+        varietyTxt.textContent = "Taste profile of the " +s.value+ " variety";
+    }
+
+});
+
