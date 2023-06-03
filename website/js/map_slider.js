@@ -1,5 +1,5 @@
 // Create a div to hold the slider and output
-let mapSliderContainer = document.createElement('div');
+let mapSliderContainer = document.getElementById('map_slider_container');
 mapSliderContainer.style.textAlign = 'center';
 mapSliderContainer.style.padding = '20px';
 
@@ -27,5 +27,5 @@ mapSlider.addEventListener('input', function() {
 });
 
 // Get the mainContainer div and insert the new sliderContainer div as its first child
-let mapMainContainer = document.getElementById('map_main_container1');
-mapMainContainer.insertBefore(mapSliderContainer, mapMainContainer.firstChild);
+let mapContainer = document.getElementById('map_content');
+mapContainer.insertBefore(mapSliderContainer, mapContainer.firstChild);
