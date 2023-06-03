@@ -180,21 +180,76 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  transform: skew(10deg) translateX(-55%); /* Adjust the skew angle as needed */
+  transform: skew(10deg) translateX(-55%);
   transform-origin: top left;
-  background-color: rgba(255, 0, 0, 0); /* Adjust the color and opacity as needed */
-
+  background-color: rgba(255, 0, 0, 0);
   transition: background-color 1s ease-in-out;
   z-index: 1;
   pointer-events: none;
-  clip-path: polygon(0 0, 200% 0, 100% 100%, 0 100%); /* Adjusted clip-path to cut the shape diagonally */
+  clip-path: polygon(0 0, 200% 0, 100% 100%, 0 100%);
 }
 
 #heritage_page:hover .overlay_heritage {
-  background-color: rgb(255,250,240,0.9); /* Change to the desired color on hover */
+  background-color: rgba(255, 250, 240, 0.9);
 }
 
+.overlay_heritage:hover + .overlay_text,
+.overlay_text:hover {
+  opacity: 1;
+}
 
+#heritage_page:hover .overlay_text {
+  opacity: 1;
+}
+#heritage_page:hover .overlay_title {
+  opacity: 1;
+}
+
+#heritage_page:hover .overlay_beans {
+  opacity: 1;
+}
+
+.overlay_text {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: relative;
+  left: 40%;
+  top:  25%;
+  transform: skew(-10deg) translate(25%, -50%);
+  z-index: 3;
+  text-align: justify;
+  color: #8B5A2B;
+  width: 30%;
+  font-weight: normal;
+  font-size: 22px;
+  margin: 20vh;
+}
+
+.overlay_title {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: relative;
+  left: 65%;
+  top:  15%;
+  transform: skew(-10deg);
+  z-index: 3;
+  color: #8B5A2B;
+  width: 30%;
+  font-size: 6rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.overlay_beans {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: relative;
+  left: 65%;
+  top:  15%;
+  z-index: 3;
+  width: 30%;
+  margin-bottom: 10px;
+}
 /*
  *
  *
