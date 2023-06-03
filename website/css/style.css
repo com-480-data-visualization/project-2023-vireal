@@ -175,18 +175,18 @@ nav {
 }
 
 .overlay_heritage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: skew(10deg) translateX(-55%);
-  transform-origin: top left;
-  background-color: rgba(255, 0, 0, 0);
-  transition: background-color 1s ease-in-out;
-  z-index: 1;
-  pointer-events: none;
-  clip-path: polygon(0 0, 200% 0, 100% 100%, 0 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transform: skew(10deg) translateX(-55vw);
+    transform-origin: top left;
+    background-color: rgba(255, 0, 0, 0);
+    transition: background-color 1s ease-in-out;
+    z-index: 1;
+    pointer-events: none;
+    clip-path: polygon(0 0, 200% 0, 100% 100%, 0 100%);
 }
 
 #heritage_page:hover .overlay_heritage {
@@ -210,33 +210,31 @@ nav {
 }
 
 .overlay_text {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  position: absolute;
-  left: 40%;
-  top:  50%;
-  transform: skew(-10deg) translate(25%, -50%);
-  z-index: 3;
-  text-align: justify;
-  color: #8B5A2B;
-  width: 30%;
-  font-weight: normal;
-  font-size: 22px;
-  margin: 20vh;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    bottom: 8vh;
+    left: 5vw;
+    z-index: 3;
+    text-align: justify;
+    color: #8B5A2B;
+    width: 35vw;
+    font-weight: normal;
+    font-size: calc(0.75vw + 0.75vh);
 }
 
 .overlay_title {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   position: absolute;
-  left: 65%;
-  top:  15%;
-  transform: skew(-10deg);
+  left: 22vw;
+  top:  10vh;
+  transform: skew(-10deg) translate(30vw, 20vh);
   z-index: 3;
   color: #8B5A2B;
-  width: 30%;
-  font-size: 6rem;
+  width: 45vw;
   font-weight: bold;
+  font-size: 4vw;
   margin-bottom: 10px;
 }
 
@@ -244,10 +242,10 @@ nav {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   position: absolute;
-  left: 56%;
-  top:  4%;
+  left: 56vw;
+  top:  4vh;
   z-index: 3;
-  width: 3%;
+  width: 3vw;
   margin-bottom: 10px;
 }
 
