@@ -272,9 +272,19 @@ nav {
 }
 
 .brewing_title {
-     position: absolute;
+    position: absolute;
     left: 15%;
     top:  15%;
+}
+
+.brewing_paragraph {
+    position: absolute;
+    left: 8%;
+    top:  30%;
+    font-size: 20px;
+    text-align: center;
+    color: #8B5A2B;
+    line-height: 2;
 }
 
 /*
@@ -419,11 +429,10 @@ nav {
 }
 
 .beans {
-    width: 200px;
-    height: 250px;
+    width: 5%;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 2vh;
+    right: 2vw;
 
 }
 
