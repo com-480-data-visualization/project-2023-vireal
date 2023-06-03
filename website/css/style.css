@@ -89,6 +89,7 @@ nav {
     color: white;
     text-decoration: none;
     margin-right: 1rem;
+    font-size: 20px;
 }
 .nav-links a::after {
     content: "";
@@ -107,9 +108,8 @@ nav {
 
 /* Hero */
 .hero {
-    /*background-image: url("https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/coffee_website-2.jpg");*/
-    background-image: url("../imgs/carousel-1.jpg");
-    background-size: 1500px;
+    background-image: url("../imgs/intro_image.jpg");
+    background-size: cover;
     padding: 5rem 10% 0rem 10%;
     height: 100vh;
     position: relative;
@@ -117,6 +117,7 @@ nav {
     color: white;
     display: flex;
     align-items: center;
+
 }
 
 .hero .intro {
@@ -126,11 +127,11 @@ nav {
     z-index: 1;
 }
 .hero .intro h1 {
-    font-size: 70px;
+    font-size: 140px;
 }
 .hero .intro h2 {
     margin: 1rem 0;
-    font-size: 35px;
+    font-size: 65px;
 }
 
 .scroll {
