@@ -879,9 +879,9 @@ nav {
 
 #taste_container {
     position: absolute;
-    bottom: 20vh;
+    top: 15vh;
     right: 0vw;
-    max-height: 40vh;
+    max-height: 50vh;
     width: 50vw; /* Changed from max-width */
     display: flex;
     align-items: flex-end; /* Aligned to the right of the container */
@@ -890,13 +890,14 @@ nav {
 }
 
 #radar-chart {
-    width: 80%;
+    height: 100%;
+    width: 100%;
     margin-right: 5vw; /* Added margin */
 }
 
 select.styled-select {
     padding: 5px;
-    width: 80%; /* Added width to take 80% of container */
+    width: 40%; /* Added width to take 80% of container */
     margin-right: 5vw; /* Added margin */
     background-color: #dbbe91;
     color: #fff;
@@ -944,37 +945,24 @@ select.styled-select option {
 .card-body{
     text-align: center;
 }
-.shop-box .card {
-    width: 50vw;
-    position: absolute;
-    bottom: 20vh;
-}
 
 .card-image {
-    margin: 3rem;
+    margin: 3vw;
 }
 
 .conclusion_text{
     position: relative;
-    top: 0vh;
     text-align: left;
-    font-size: 20px;
+    font-size: calc(1vw + 0.5vh);
+    max-height: 5vh;
     color: #c2a374;
     font-family: "Josefin Sans", serif;
 }
+
 .cards-container {
-    margin-top: 25vh; /* Adjust the margin value as needed */
+    margin-top: 25vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
-
-
-
-
-
-
-
-
-
