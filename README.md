@@ -45,18 +45,18 @@ which has a website running functionality.
 
 ### Milestone 1
 <p align="center">
-     <a href="https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/milestone2/milestone1.md">Milestone 1 report</a>
+     <a href="https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/milestone/milestone1.md">Milestone 1 report</a>
 </p>
 
 ### Milestone 2
 <p align="center">
-     <a href="https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/milestone2/milestone2.pdf">Milestone 2 report</a>
+     <a href="https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/milestone/milestone2.pdf">Milestone 2 report</a>
 </p>
 
 
 ### Milestone 3
 
 <p align="center">
-     <a href="https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/milestone2/process_book.pdf">Process Book</a>
+     <a href="https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/milestone/process_book.pdf">Process Book</a>
 </p>
 
