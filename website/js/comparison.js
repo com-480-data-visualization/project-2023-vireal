@@ -30,14 +30,36 @@ loadQualityDBArabica = function (data, name) {
         return {name: column, mean: (sum / values.length).toFixed(2)};
     });
 
-    console.log(means);
-    console.log((means[0].mean - 7) * 100 );
-    document.getElementById("aroma_arabica").value = (means[0].mean - 7) * 100 ;
-    document.getElementById("taste_arabica").value = (means[2].mean - 7) * 100 ;
-    document.getElementById("acidity_arabica").value = (means[3].mean - 7) * 100 ;
-    document.getElementById("body_arabica").value = (means[1].mean - 7) * 100 ;
-    document.getElementById("balance_arabica").value = (means[5].mean - 7) * 100 ;
-    document.getElementById("sweetness_arabica").value = (means[6].mean - 7) * 100 ;
+
+    var progressBar = document.getElementById("aroma_arabica");
+    var newValue = (means[0].mean - 7) * 100; // Replace with the desired new value for the progress bar
+    progressBar.setAttribute("aria-valuenow", newValue);
+    progressBar.style.width = newValue + "%";
+
+    progressBar = document.getElementById("taste_arabica");
+    newValue = (means[2].mean - 7) * 100;
+    progressBar.setAttribute("aria-valuenow", newValue);
+    progressBar.style.width = newValue + "%";
+
+    progressBar = document.getElementById("acidity_arabica");
+    newValue = (means[3].mean - 7) * 100;
+    progressBar.setAttribute("aria-valuenow", newValue);
+    progressBar.style.width = newValue + "%";
+
+    progressBar = document.getElementById("body_arabica");
+    newValue = (means[1].mean - 7) * 100;
+    progressBar.setAttribute("aria-valuenow", newValue);
+    progressBar.style.width = newValue + "%";
+
+    progressBar = document.getElementById("balance_arabica");
+    newValue = (means[5].mean - 7) * 100;
+    progressBar.setAttribute("aria-valuenow", newValue);
+    progressBar.style.width = newValue + "%";
+
+    progressBar = document.getElementById("sweetness_arabica");
+    newValue = (means[6].mean - 7) * 100;
+    progressBar.setAttribute("aria-valuenow", newValue);
+    progressBar.style.width = newValue + "%";
 
 };
 
@@ -58,15 +80,36 @@ loadQualityDBRobusta = function (data, name) {
         const sum = d3.sum(values);
         return {name: column, mean: (sum / values.length).toFixed(2)};
     });
+    
+    var progressBar = document.getElementById("aroma_robusta");
+    var newValue = (means[0].mean - 7) * 100; // Replace with the desired new value for the progress bar
+    progressBar.setAttribute("aria-valuenow", newValue);
+    progressBar.style.width = newValue + "%";
 
-    console.log(means);
-    console.log((means[0].mean - 7) * 100 );
-    document.getElementById("aroma_robusta").value = (means[0].mean - 7) * 100 ;
-    document.getElementById("taste_robusta").value = (means[2].mean - 7) * 100 ;
-    document.getElementById("acidity_robusta").value = (means[3].mean - 7) * 100 ;
-    document.getElementById("body_robusta").value = (means[1].mean - 7) * 100 ;
-    document.getElementById("balance_robusta").value = (means[5].mean - 7) * 100 ;
-    document.getElementById("sweetness_robusta").value = (means[6].mean - 7) * 100 ;
+    progressBar = document.getElementById("taste_robusta");
+    newValue = (means[2].mean - 7) * 100;
+    progressBar.setAttribute("aria-valuenow", newValue);
+    progressBar.style.width = newValue + "%";
+
+    progressBar = document.getElementById("acidity_robusta");
+    newValue = (means[3].mean - 7) * 100;
+    progressBar.setAttribute("aria-valuenow", newValue);
+    progressBar.style.width = newValue + "%";
+
+    progressBar = document.getElementById("body_robusta");
+    newValue = (means[1].mean - 7) * 100;
+    progressBar.setAttribute("aria-valuenow", newValue);
+    progressBar.style.width = newValue + "%";
+
+    progressBar = document.getElementById("balance_robusta");
+    newValue = (means[5].mean - 7) * 100;
+    progressBar.setAttribute("aria-valuenow", newValue);
+    progressBar.style.width = newValue + "%";
+
+    progressBar = document.getElementById("sweetness_robusta");
+    newValue = (means[6].mean - 7) * 100;
+    progressBar.setAttribute("aria-valuenow", newValue);
+    progressBar.style.width = newValue + "%";
 };
 
 updatePrice = function (data){
