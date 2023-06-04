@@ -157,6 +157,51 @@ nav {
     display: none;
 }
 
+
+
+
+
+/*
+ *
+ *
+ *
+ * Titles
+ *
+ *
+ *
+ */
+.section-title {
+    position: absolute;
+    padding: 10vh 0 3vh 0;
+    text-align: center;
+    top: 0;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 0.2vw;
+    height: 8vh;
+    top: 0;
+    left: 50%;
+    margin-left: 0.1vw;
+    background: #DA9F5B;
+}
+
+.text_upper{
+    text-transform: uppercase;
+    letter-spacing: 0.5vw;
+}
+
+.text_lower{
+    font-size: 2vw;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+
+
+
 /*
  *
  *
@@ -220,6 +265,7 @@ nav {
     text-align: justify;
     color: #8B5A2B;
     width: 30vw;
+    max-height: 60vh;
     font-weight: normal;
     font-size: calc(1vw + 0.5vh);
 }
@@ -229,13 +275,9 @@ nav {
     transition: opacity 1s ease-in-out;
     position: absolute;
     left: 65%;
-    top:  15%;
     transform: skew(-10deg);
-    z-index: 3;
     width: 30%;
-    font-size: 6rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+    max-height: 10vh;
 }
 
 .overlay_beans {
@@ -287,11 +329,12 @@ nav {
     align-items: center; /* Vertically center align items */
 }
 
+
 .brewing_title {
     position: absolute;
     left: 50%;
     transform: translateX(-50%); /* Move the title back by 50% of its own width */
-    top: 15%;
+    max-height: 10vh;
 }
 
 .brewing_paragraph {
@@ -417,34 +460,7 @@ nav {
     color: #c2a374;
     font-family: "Josefin Sans", serif;
 }
-.section-title {
-    position: absolute;
-    padding: 115px 0 35px 0;
-    text-align: center;
-    top: 0;
-}
 
-.section-title::after {
-    position: absolute;
-    content: "";
-    width: 2px;
-    height: 90px;
-    top: 0;
-    left: 50%;
-    margin-left: 1px;
-    background: #DA9F5B;
-}
-
-.text_upper{
-    text-transform: uppercase;
-    letter-spacing: 5px;
-}
-
-.text_lower{
-    font-size: 2.5rem;
-    font-weight: 300;
-    line-height: 1.2;
-}
 
 .beans {
     width: 5%;
