@@ -11,7 +11,7 @@ COM-480 Data Visualization from EPFL.
 | Javier García Arredondo|311166 |
 | Hind El Bouchrifi| 300862 |
 
-==• [Milestones](#milestone) •==
+•=• [Milestones](#milestone) •=•
 
 
 ## Project Overview
@@ -72,4 +72,4 @@ which has a website running functionality.
      <a href="https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/milestone/process_book.pdf">Process Book</a>
 </p>
 
-## Video Screencast
+#### Video screencast
