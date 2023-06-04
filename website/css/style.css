@@ -750,6 +750,8 @@ nav {
  */
 .map_container {
     position: absolute;
+    max-height: 100%;
+    max-width: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -857,10 +859,12 @@ nav {
  *
  */
 
-#parent_container {
+#taste_parent_container {
     position: relative;
     width: 100vw;
     height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 #left_taste_container {
@@ -868,17 +872,42 @@ nav {
     position: absolute;
     left: 5vw;
     bottom: 20vh;
+    max-height: 40vh;
     max-width: 40vw;
     display: flex;
 }
 
 #taste_container {
-    min-width: 30vw;
-    max-width: 35vw;
     position: absolute;
     bottom: 20vh;
-    right: 5vw;
+    right: 0vw;
+    max-height: 40vh;
+    max-width: 40vw;
+    display: flex;
+    align-items: flex-start;
 }
+
+#radar-chart {
+    position: relative;
+    width: 80%;
+    align-items: center;
+}
+
+select.styled-select {
+    padding: 5px;
+    background-color: #dbbe91;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+select.styled-select option {
+    background-color: #c2a374;
+    color: #fff;
+}
+
 
 #variety_name {
     position: absolute;
@@ -901,24 +930,6 @@ nav {
     background: #f5e4c9 linear-gradient(68deg, floralwhite 0%, floralwhite 50%, transparent 50%);
 }
 
-#taste_page #radar-chart {
-    align-items: center;
-}
-
-select.styled-select {
-    padding: 5px;
-    background-color: #dbbe91;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-}
-
-select.styled-select option {
-    background-color: #c2a374;
-    color: #fff;
-}
 
 /*
  *
