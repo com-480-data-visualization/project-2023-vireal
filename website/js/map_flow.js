@@ -87,7 +87,7 @@ function drawFlowMap() {
             if(isImport === 1) {
                 let i = 0
                 exportList.forEach(function(country) {
-                    let color = treetopColors2[i]
+                    let color = treetopColors2[treetopColors2.length - 1 -i]
                     i += 1
                     svg2.selectAll('path')
                         .filter(function(d) { return d.properties.name === country; })
