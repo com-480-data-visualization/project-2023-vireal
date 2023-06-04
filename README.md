@@ -41,7 +41,7 @@ visualizations by interacting with them.
      ├───imgs       (Image resources for the website)
      ├───css        (CSS stylesheet)
      ├───js         (scripts for the different visualizations)
-     └───map_dta    (jupyter notebook containig processing for map)
+     └───map_data    (jupyter notebook containig processing for map)
 ```
 
 ## Local execution
