@@ -11,7 +11,7 @@ COM-480 Data Visualization from EPFL.
 | Javier García Arredondo|311166 |
 | Hind El Bouchrifi| 300862 |
 
-•=• [Milestones](#milestone) •=•
+•=• [Milestones](#milestones) •=•
 
 
 ## Project Overview
