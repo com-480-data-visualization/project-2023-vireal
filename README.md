@@ -3,13 +3,13 @@
 This repository contains our final project for the course 
 COM-480 Data Visualization from EPFL.
 
-## Scipers.
+## Scipers
 
-| Student's name | SCIPER |
-| -------------- | ------ |
-| Victor Nazianzeno--Le Jamtel|312075 |
-| Javier García Arredondo|311166 |
-| Hind El Bouchrifi| 300862 |
+| Student's name               | SCIPER |
+|------------------------------|--------|
+| Victor Nazianzeno--Le Jamtel | 312075 |
+| Javier García Arredondo      | 311166 |
+| Hind El Bouchrifi            | 300862 |
 
 •=• [Milestones](#milestones) •=•
 
