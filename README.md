@@ -31,6 +31,18 @@ visualizations by interacting with them.
      <a href="https://com-480-data-visualization.github.io/project-2023-vireal/website/index.html">Website</a>
 </p>
 
+## Project Structure
+
+``` 
+├───data            (Datasets for the website)
+├───imgs            (Images for the repository)
+├───milestone       (Milestones report and Process Book)
+└───website         (Website directory)       
+     ├───imgs       (Image resources for the website)
+     ├───css        (CSS stylesheet)
+     └───js         (scripts for the different visualizations)
+```
+
 ## Local execution
 
 In order for you to run the website locally, you can follow those instructions:
@@ -60,3 +72,4 @@ which has a website running functionality.
      <a href="https://github.com/com-480-data-visualization/project-2023-vireal/blob/master/milestone/process_book.pdf">Process Book</a>
 </p>
 
+## Video Screencast
