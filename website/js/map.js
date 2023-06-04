@@ -87,8 +87,6 @@ function getCountryNameAndMetrics(countryDataItem) {
 
 
 function drawMap() {
-    console.log(width)
-    console.log(height)
 
     svg.selectAll('path').remove();
 
@@ -128,7 +126,7 @@ function drawMap() {
             }
 
         })
-        .on('mouseout', (countryDataItem) => {
+        .on('mouseout', () => {
             tooltip.transition()
                 .style('visibility', 'hidden')
         })
@@ -138,19 +136,10 @@ async function loadData() {
     try {
         let countryResponse = await d3.json(countryURL);
         countryData = topojson.feature(countryResponse, countryResponse.objects.countries);
-        console.log(countryData);
-
         importData = await d3.json(importJSON);
-        console.log(importData);
-
         exportData = await d3.json(exportJSON);
-        console.log(exportData);
-
         importDecilesData = await d3.json(importDecilesJSON);
-        console.log(importDecilesData);
-
         exportDecilesData = await d3.json(exportDecilesJSON);
-        console.log(exportDecilesData);
 
         drawMap();
     } catch (error) {

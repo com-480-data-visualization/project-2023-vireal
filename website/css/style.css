@@ -326,10 +326,12 @@ nav {
 
 .overlay_beans_evolution{
     position: absolute;
-    left: 49%;
-    top: 92%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
     width: 3%;
 }
+
 .design-section {
     display: flex;
     flex-direction: column;
@@ -353,7 +355,6 @@ nav {
     max-width: 800px;
     display: flex;
     flex-direction: column;
-    margin-top: 90px;
 }
 
 .timeline-content {
@@ -801,7 +802,7 @@ nav {
     margin-bottom: 5px;
 }
 
-#page_map .country:hover {
+#flow_page .country:hover {
     fill: black
 }
 
