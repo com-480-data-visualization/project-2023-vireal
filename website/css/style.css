@@ -882,19 +882,22 @@ nav {
     bottom: 20vh;
     right: 0vw;
     max-height: 40vh;
-    max-width: 40vw;
+    width: 50vw; /* Changed from max-width */
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end; /* Aligned to the right of the container */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Align children to the top */
 }
 
 #radar-chart {
-    position: relative;
     width: 80%;
-    align-items: center;
+    margin-right: 5vw; /* Added margin */
 }
 
 select.styled-select {
     padding: 5px;
+    width: 80%; /* Added width to take 80% of container */
+    margin-right: 5vw; /* Added margin */
     background-color: #dbbe91;
     color: #fff;
     border: none;
@@ -908,13 +911,10 @@ select.styled-select option {
     color: #fff;
 }
 
-
 #variety_name {
-    position: absolute;
-    bottom: 5vh;
-    right: 5vw;
+    width: 80%; /* Added width to take 80% of container */
+    margin-right: 5vw; /* Added margin */
     text-align: right;
-    max-width: 30vw;
     font-size: 1.5vw;
     font-family: "Josefin Sans", serif;
 }
