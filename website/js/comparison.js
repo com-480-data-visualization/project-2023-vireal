@@ -80,7 +80,7 @@ loadQualityDBRobusta = function (data, name) {
         const sum = d3.sum(values);
         return {name: column, mean: (sum / values.length).toFixed(2)};
     });
-    
+
     var progressBar = document.getElementById("aroma_robusta");
     var newValue = (means[0].mean - 7) * 100; // Replace with the desired new value for the progress bar
     progressBar.setAttribute("aria-valuenow", newValue);
@@ -170,9 +170,6 @@ updatePrice = function (data){
             var zeroPercent = keyframes[0];
             zeroPercent.style.backgroundPosition = "100px " + pos + "px"; // Modify the values as desired
 
-            // Update 50% keyframe
-            var fiftyPercent = keyframes[1];
-            //fiftyPercent.style.backgroundPosition = '300px 200px'; // Modify the values as desired
         }
 
     }
