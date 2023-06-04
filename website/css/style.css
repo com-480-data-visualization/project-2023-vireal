@@ -24,8 +24,8 @@ body {
 }
 
 .vertical-scroll-container {
-    width:100%;
-    height:100%;
+    width: 100vw;
+    height: 100vh;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -157,6 +157,51 @@ nav {
     display: none;
 }
 
+
+
+
+
+/*
+ *
+ *
+ *
+ * Titles
+ *
+ *
+ *
+ */
+.section-title {
+    position: absolute;
+    padding: 10vh 0 3vh 0;
+    text-align: center;
+    top: 0;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 0.2vw;
+    height: 8vh;
+    top: 0;
+    left: 50%;
+    margin-left: 0.1vw;
+    background: #DA9F5B;
+}
+
+.text_upper{
+    text-transform: uppercase;
+    letter-spacing: 0.5vw;
+}
+
+.text_lower{
+    font-size: 2vw;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+
+
+
 /*
  *
  *
@@ -220,6 +265,7 @@ nav {
     text-align: justify;
     color: #8B5A2B;
     width: 30vw;
+    max-height: 60vh;
     font-weight: normal;
     font-size: calc(1vw + 0.5vh);
 }
@@ -229,13 +275,9 @@ nav {
     transition: opacity 1s ease-in-out;
     position: absolute;
     left: 65%;
-    top:  15%;
     transform: skew(-10deg);
-    z-index: 3;
     width: 30%;
-    font-size: 6rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+    max-height: 10vh;
 }
 
 .overlay_beans {
@@ -258,29 +300,49 @@ nav {
  *
  *
  */
-
 #brewing_page {
-  position: relative;
-  background-image: url("https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/brewing_art.jpg");
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  display: flex;
-  overflow: hidden;
-  height: 100vh; /* Set the container height to the full viewport height */
-  background-position: right;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    height: 100vh; /* Set the container height to the full viewport height */
 }
+
+.background-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%; /* Set the width to 50% of the container */
+    height: 100%; /* Set the height to 100% of the container */
+    background-image: url("https://raw.githubusercontent.com/com-480-data-visualization/project-2023-vireal/master/website/imgs/brewing_art.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.brewing_text_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; /* Set the width to 50% of the container */
+    height: 100%; /* Set the height to 100% of the container */
+    display: flex; /* Add display: flex to enable flexbox properties */
+    justify-content: center; /* Horizontally center align items */
+    align-items: center; /* Vertically center align items */
+}
+
 
 .brewing_title {
     position: absolute;
-    left: 15%;
-    top:  15%;
+    left: 50%;
+    transform: translateX(-50%); /* Move the title back by 50% of its own width */
+    max-height: 10vh;
 }
 
 .brewing_paragraph {
     position: absolute;
-    left: 3%;
-    top:  30%;
-    font-size: calc(1vw + 0.5vh);;
+    left: 50%;
+    transform: translateX(-50%); /* Move the title back by 50% of its own width */
+    top:  20%;
+    font-size: calc(1vw + 0.3vh);;
     text-align: center;
     color: #8B5A2B;
     line-height: 2;
@@ -300,7 +362,6 @@ nav {
     margin-right: auto;
     margin-left: auto;
     padding: 0 !important;
-    margin-bottom: 3rem !important;
 }
 /*
  * Timeline
@@ -308,10 +369,12 @@ nav {
 
 .overlay_beans_evolution{
     position: absolute;
-    left: 49%;
-    top: 92%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
     width: 3%;
 }
+
 .design-section {
     display: flex;
     flex-direction: column;
@@ -335,7 +398,6 @@ nav {
     max-width: 800px;
     display: flex;
     flex-direction: column;
-    margin-top: 90px;
 }
 
 .timeline-content {
@@ -398,34 +460,7 @@ nav {
     color: #c2a374;
     font-family: "Josefin Sans", serif;
 }
-.section-title {
-    position: absolute;
-    padding: 115px 0 35px 0;
-    text-align: center;
-    top: 0;
-}
 
-.section-title::after {
-    position: absolute;
-    content: "";
-    width: 2px;
-    height: 90px;
-    top: 0;
-    left: 50%;
-    margin-left: 1px;
-    background: #DA9F5B;
-}
-
-.text_upper{
-    text-transform: uppercase;
-    letter-spacing: 5px;
-}
-
-.text_lower{
-    font-size: 2.5rem;
-    font-weight: 300;
-    line-height: 1.2;
-}
 
 .beans {
     width: 5%;
@@ -715,6 +750,8 @@ nav {
  */
 .map_container {
     position: absolute;
+    max-height: 100%;
+    max-width: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -783,7 +820,7 @@ nav {
     margin-bottom: 5px;
 }
 
-#page_map .country:hover {
+#flow_page .country:hover {
     fill: black
 }
 
@@ -822,10 +859,12 @@ nav {
  *
  */
 
-#parent_container {
+#taste_parent_container {
     position: relative;
     width: 100vw;
     height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 #left_taste_container {
@@ -833,24 +872,50 @@ nav {
     position: absolute;
     left: 5vw;
     bottom: 20vh;
+    max-height: 40vh;
     max-width: 40vw;
     display: flex;
 }
 
 #taste_container {
-    min-width: 30vw;
-    max-width: 35vw;
     position: absolute;
-    bottom: 20vh;
-    right: 5vw;
+    top: 15vh;
+    right: 0vw;
+    max-height: 50vh;
+    width: 50vw; /* Changed from max-width */
+    display: flex;
+    align-items: flex-end; /* Aligned to the right of the container */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Align children to the top */
+}
+
+#radar-chart {
+    height: 100%;
+    width: 100%;
+    margin-right: 5vw; /* Added margin */
+}
+
+select.styled-select {
+    padding: 5px;
+    width: 40%; /* Added width to take 80% of container */
+    margin-right: 5vw; /* Added margin */
+    background-color: #dbbe91;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+select.styled-select option {
+    background-color: #c2a374;
+    color: #fff;
 }
 
 #variety_name {
-    position: absolute;
-    bottom: 5vh;
-    right: 5vw;
+    width: 80%; /* Added width to take 80% of container */
+    margin-right: 5vw; /* Added margin */
     text-align: right;
-    max-width: 30vw;
     font-size: 1.5vw;
     font-family: "Josefin Sans", serif;
 }
@@ -866,24 +931,6 @@ nav {
     background: #f5e4c9 linear-gradient(68deg, floralwhite 0%, floralwhite 50%, transparent 50%);
 }
 
-#taste_page #radar-chart {
-    align-items: center;
-}
-
-select.styled-select {
-    padding: 5px;
-    background-color: #dbbe91;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-}
-
-select.styled-select option {
-    background-color: #c2a374;
-    color: #fff;
-}
 
 /*
  *
@@ -898,37 +945,24 @@ select.styled-select option {
 .card-body{
     text-align: center;
 }
-.shop-box .card {
-    width: 50vw;
-    position: absolute;
-    bottom: 20vh;
-}
 
 .card-image {
-    margin: 3rem;
+    margin: 3vw;
 }
 
 .conclusion_text{
     position: relative;
-    top: 0vh;
     text-align: left;
-    font-size: 20px;
+    font-size: calc(1vw + 0.5vh);
+    max-height: 5vh;
     color: #c2a374;
     font-family: "Josefin Sans", serif;
 }
+
 .cards-container {
-    margin-top: 25vh; /* Adjust the margin value as needed */
+    margin-top: 25vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
-
-
-
-
-
-
-
-
-
